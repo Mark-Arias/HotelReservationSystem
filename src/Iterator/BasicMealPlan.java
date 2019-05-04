@@ -5,7 +5,7 @@ public class BasicMealPlan extends GenericMealPlan {
     int numberOfLargePizzas;
     int numberOfLiterSodas;
 
-    double cost;
+    double cost;//test1
     double basicMealPlanBaseCost = 65; //$65 + any other charges to the plan (if any)
 
     public BasicMealPlan() {
