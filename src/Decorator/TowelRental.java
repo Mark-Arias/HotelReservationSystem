@@ -5,14 +5,14 @@ public class TowelRental extends Upgrades {
     Room room;
     protected int quantity;
 
-    public Projector(Room room)
+    public TowelRental(Room room)
     {
         this.room = room;
     }
 
     public String getDescription()
     {
-        return room.getDescription() + ", Projector";
+        return room.getDescription() + ", Towel Rental";
     }
 
     public int getCost()

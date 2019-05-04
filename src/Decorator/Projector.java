@@ -17,6 +17,6 @@ public class Projector {
 
     public int getCost(int hour)
     {
-        return 10(quantity) + room.getCost();
+        return 10(hour) + room.getCost();
     }
 }
