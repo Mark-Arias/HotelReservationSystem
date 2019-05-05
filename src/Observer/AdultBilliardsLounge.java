@@ -1,4 +1,4 @@
-package Decorator;
+package Observer;
 
 public class AdultBilliardsLounge {
     double cost;

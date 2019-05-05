@@ -1,6 +1,6 @@
-package Decorator;
+package Observer;
 
-public class KaraokeLounge {
+public class MediumPartyRoom {
     int numberOfRoomsAvailable;
     double cost;
 

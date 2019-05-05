@@ -1,4 +1,4 @@
-package Iterator;
+package MealPlanDecorator;
 
 public class GoldMealPlan extends GenericMealPlan {
 

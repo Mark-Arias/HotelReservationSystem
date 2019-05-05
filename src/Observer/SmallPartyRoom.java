@@ -1,12 +1,9 @@
-package Decorator;
+package Observer;
 
-public class AquaRoom {
+public class SmallPartyRoom {
     int numberOfRoomsAvailable;
-    String restrictions;
     double cost;
-
     public double getCost(){
         return cost;
     }
-
 }
