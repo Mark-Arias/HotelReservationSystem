@@ -18,7 +18,7 @@ public class PartyFavorBag extends Upgrades{
         return room.getDescription() + ", Party Favor Bag";
     }
 
-    public int getCost(int quantity)
+    public double getCost(int quantity)
     {
 
         return 5 * quantity + room.getCost();

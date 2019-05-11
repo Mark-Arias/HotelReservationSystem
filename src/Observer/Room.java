@@ -91,7 +91,13 @@ public class Room
         return cost;
     }
 
-
+    /**
+    *
+    * @return
+    */
+   public double getDescription(){
+       return cost;
+   }
 
     // Methods below associated with Observer Design Pattern -------------------------------------------------------
 

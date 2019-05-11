@@ -17,10 +17,10 @@ public class TowelRental extends Upgrades {
         return room.getDescription() + ", Towel Rental";
     }
 
-    public int getCost()
+    public double getCost()
     {
     	
         return 2 * quantity + room.getCost();
     }
 }
-}
+

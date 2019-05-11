@@ -2,10 +2,10 @@ package Decorator;
 
 import Observer.Room;
 
-public class PartyDecorationSetup {
+public class PartyDecorationSetup extends Upgrades{
 
     Room room;
-    public PartyDecoratorSetup(Room room)
+    public PartyDecorationSetup(Room room)
     {
         this.room = room;
     }
@@ -15,7 +15,7 @@ public class PartyDecorationSetup {
         return room.getDescription() + ", Party Decorator Setup";
     }
 
-    public int getCost()
+    public double getCost()
     {
         return 100 + room.getCost();
     }
