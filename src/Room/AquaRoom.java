@@ -8,7 +8,7 @@ public class AquaRoom{
   public AquaRoom () {
 	  
 	  this.numberOfRoomsAvailable = 1;
-	  this.description = ""
+	  this.description = "";
 	  
   }
   
