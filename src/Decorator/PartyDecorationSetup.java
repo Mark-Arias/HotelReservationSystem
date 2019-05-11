@@ -18,4 +18,6 @@ public class PartyDecorationSetup {
         return 100 + room.getCost();
     }
 //comments
+    
+    // c
 }
