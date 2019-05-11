@@ -1,5 +1,7 @@
 package Decorator;
 
+import Observer.Room;
+
 public class TowelRental extends Upgrades {
 
     Room room;
@@ -17,7 +19,8 @@ public class TowelRental extends Upgrades {
 
     public int getCost()
     {
-        return 2(quantity) + room.getCost();
+    	
+        return 2 * quantity + room.getCost();
     }
 }
 }

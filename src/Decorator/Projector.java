@@ -1,5 +1,7 @@
 package Decorator;
 
+import Observer.Room;
+
 public class Projector {
 
     Room room;
@@ -17,6 +19,6 @@ public class Projector {
 
     public int getCost(int hour)
     {
-        return 10(hour) + room.getCost();
+        return 10 * hour + room.getCost();
     }
 }

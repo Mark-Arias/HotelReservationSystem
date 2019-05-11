@@ -1,5 +1,7 @@
 package Decorator;
 
+import Observer.Room;
+
 public class PartyFavorBag extends Upgrades{
 
     // We need a reference to the obj we are decorating
@@ -19,7 +21,7 @@ public class PartyFavorBag extends Upgrades{
     public int getCost(int quantity)
     {
 
-        return 5(quantity) + room.getCost();
+        return 5 * quantity + room.getCost();
     }
 
 

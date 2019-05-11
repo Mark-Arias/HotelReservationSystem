@@ -1,5 +1,7 @@
 package Decorator;
 
+import Observer.Room;
+
 public class PartyDecorationSetup {
 
     Room room;

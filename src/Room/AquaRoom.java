@@ -1,11 +1,25 @@
 package Room;
 public class AquaRoom{
-  int numberOfRoomsAvailable;
-  String restrictions;
-  double cost;
+  protected int numberOfRoomsAvailable;
+  protected String description;
+  protected String restrictions;
+  protected double cost;
   
   public AquaRoom () {
 	  
+	  this.numberOfRoomsAvailable = 1;
+	  this.description = ""
+	  
+  }
+  
+  public String getDescription()
+  {
+	  return this.description;
+  }
+  
+  public void setDescription(String description)
+  {
+	  this.description = description; 
   }
   
   public double getCost(){
