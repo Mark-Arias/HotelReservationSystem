@@ -10,6 +10,7 @@ public class TesterRoom {
 		
 		System.out.println(aRoom1.toString());
 		
+	
 		
 	}
 
