@@ -4,6 +4,10 @@ public class AquaRoom{
   String restrictions;
   double cost;
   
+  public AquaRoom () {
+	  
+  }
+  
   public double getCost(){
     return 700;
   }
