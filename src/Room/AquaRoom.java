@@ -41,5 +41,6 @@ public class AquaRoom{
   public String toString() {
 	  String rt = "Room Ammenities" + description + "\nCost: " + cost;
 	  return rt;
+	  
   }
 }
