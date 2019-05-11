@@ -2,9 +2,6 @@ package MealPlanDecorator;
 
 public class BasicMealPlan extends GenericMealPlan {
 
-    int numberOfLargePizzas;
-    int numberOfLiterSodas;
-
     double cost;
    
 
@@ -19,9 +16,8 @@ public class BasicMealPlan extends GenericMealPlan {
     }
     
     public String toString() {
-    	String rt = "Number of XL pizzas " + numberOfLargePizzas 
-    				+ "\nNumber of two liter sodas: " + numberOfLiterSodas;
+    	String rt = super.toString() + "\nTotal room cost: " + cost;
+    	return rt; 
     	
-    	return rt;
     }
 }

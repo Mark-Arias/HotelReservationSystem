@@ -8,14 +8,13 @@ public class AquaRoom{
   public AquaRoom() {
 	  
 	  this.numberOfRoomsAvailable = 1;
-<<<<<<< HEAD
+
 	  this.description = "Olympic-sized pool with water slide, kiddie pool, and large jacuzzi";
 	  this.restrictions ="To access water facilities, bathing suits must be worn at all times";
 	  this.cost = 700; 
-=======
-	  this.description = "";
-	  
->>>>>>> branch 'master' of https://github.com/Mark-Arias/HotelReservationSystem
+
+
+
   }
   
   public String getDescription()
