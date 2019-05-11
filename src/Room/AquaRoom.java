@@ -38,5 +38,8 @@ public class AquaRoom{
 	  this.restrictions = restrictions;
   }
   
-  
+  public String toString() {
+	  String rt = "Room Ammenities" + description + "\nCost: " + cost;
+	  return rt;
+  }
 }
