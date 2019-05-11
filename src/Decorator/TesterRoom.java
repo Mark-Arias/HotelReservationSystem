@@ -1,7 +1,11 @@
 package Decorator;
 
 import MealPlanDecorator.BasicMealPlan;
+
 import MealPlanDecorator.BronzeMealPlan;
+
+import Observer.Room;
+
 import Room.AquaRoom;
 
 public class TesterRoom {
@@ -18,5 +22,13 @@ public class TesterRoom {
 		System.out.println(bznmp.toString());
 		
 
+		AquaRoom aRoom2 = new AquaRoom();
+		
+		//decorate it 
+		aRoom2 = new TowelRental(aRoom2); 
+		// 
+		Room room1 = new Room("", 2, true);
+		room1 = new TowelRental(room1); 
+			
 	}
 }
