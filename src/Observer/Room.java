@@ -9,7 +9,7 @@ import java.util.Date;
 public class Room
 {
 
-    private String amenities;
+    private String amenities;// upgrade options
     private boolean isAvailable;
     private String description;
     private int capacity;
@@ -20,9 +20,13 @@ public class Room
     /**
      * Room Constructor
      */
-    public Room(String amenities, int capacity, boolean isAvailable)
+    public Room () {
+    	
+    }
+    
+    public Room( int capacity, boolean isAvailable)
     {
-        this.amenities = amenities;
+        //this.amenities = description;
         this.capacity = capacity;
         this.isAvailable = isAvailable;
     }
@@ -53,7 +57,10 @@ public class Room
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
-
+    
+    public String getDescription() {
+    	return description;
+    }
 
     /**
      *
@@ -95,9 +102,15 @@ public class Room
     *
     * @return
     */
+
    public String getDescription(){
        return description;
    }
+
+//   public double getDescription(){
+//       //return cost;
+//   }
+
 
     // Methods below associated with Observer Design Pattern -------------------------------------------------------
 

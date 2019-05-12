@@ -1,21 +1,17 @@
 package MealPlanDecorator;
 
-public class MealUpgrade extends GenericMealPlan{
+public abstract class MealUpgrade extends GenericMealPlan{
 	
+	String description;
 
 
-    public BronzeMealPlan() {
-    	
-        this.numberOfLargePizzas = 3 ;// 3 XL pizzas with one toppings
-        this.numberOfLiterSodas = 5 ;// customer gets 3 large sodas
-        this.numberOfToppings = 2;
-        this.cost = 75;
-
-    }
     
     public String toString() {
     	String rt = super.toString() + "\nTotal room cost: " + cost;
     	return rt; 
     	
     }
+
+	@Override
+	public abstract String getDescription();
 }

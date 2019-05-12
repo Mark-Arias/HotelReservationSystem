@@ -4,6 +4,7 @@ import Observer.Room;
 
 public class TowelRental extends Upgrades {
 
+	// Instance variable room of type room 
     Room room;
     protected int quantity;
 
@@ -12,12 +13,12 @@ public class TowelRental extends Upgrades {
         this.room = room;
     }
 
-    @Override
     public String getDescription()
     {
         return room.getDescription() + ", Towel Rental";
     }
 
+    // Adjust cost accordingly 
     public double getCost()
     {
     	
