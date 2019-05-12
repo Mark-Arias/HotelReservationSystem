@@ -111,7 +111,19 @@ public class NewReservationFrame extends JFrame{
 		guestDOBLabel = new JLabel("Date of Birth: ");
 		guestDOB = new JTextField("", 20);
 		
-		// Credit Card Information 
+		
+		// CREDIT CARD INFORMATION
+		ccNameLabel = new JLabel("Name: ");
+		ccName = new JTextField("", 20);
+		
+		ccNumLabel = new JLabel("Number: ");
+		ccNum = new JTextField("", 20);
+		
+		ccExpLabel = new JLabel("Exp Date: ");
+		ccExp = new JTextField("", 20);
+		
+		ccCVVLabel = new JLabel("CVV: ");
+		ccCVV = new JTextField("", 20); 
 		
 				
 		
