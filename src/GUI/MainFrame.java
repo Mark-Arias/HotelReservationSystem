@@ -28,11 +28,24 @@ import Room.MediumPartyRoom;
 import Room.SmallPartyRoom;
 
 public class MainFrame extends JFrame {
+	
 	JMenuBar menuBar;
 	JScrollPane scrollPane;
 	JPanel centerPanel;
 	
-
+	
+	// test label 
+	JLabel test; 
+	
+	JPanel mealPanel; 
+	// Meal Plan Labels 
+	private JLabel basicMealPlan;
+	private JLabel bronzeMealPlan;
+	private JLabel silverMealPlan;
+	private JLabel goldMealPlan;
+	private JLabel platinumMealPlan;
+	
+	
 	//border settings used in the method addARoomDescription()
  	Border raisedbevel = BorderFactory.createRaisedBevelBorder(); 
  	Border loweredbevel = BorderFactory.createLoweredBevelBorder();
@@ -45,8 +58,7 @@ public class MainFrame extends JFrame {
 	
 		this.createMenuBar();
 		this.createDefaultPanel();
-		this.setVisible(true);
-		
+		this.setVisible(true);	
 	}
 	
 
@@ -58,7 +70,7 @@ public class MainFrame extends JFrame {
 		centerPanel = new JPanel();
 		centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.Y_AXIS));
 		//Title of default view
-		JLabel panelTitle = new JLabel("Guest Reservation");
+		JLabel panelTitle = new JLabel("Small Party Rooms");
 		panelTitle.setFont(new Font(Font.SERIF, Font.BOLD, 30));
 		
 		
@@ -76,7 +88,33 @@ public class MainFrame extends JFrame {
 		this.add(scrollPane, BorderLayout.CENTER);
 	}
 	
-	// Add the panels to display only the selected item! 
+	private void createMealPanel()
+	{
+		centerPanel = new JPanel();
+		centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.Y_AXIS));
+		
+		JLabel panelTitle = new JLabel("Small Party Rooms");
+		panelTitle.setFont(new Font(Font.SERIF, Font.BOLD, 30));
+		
+		
+		centerPanel.add(panelTitle);
+		
+		basicMealPlan = new JLabel("Basic Meal Plan");
+		bronzeMealPlan = new JLabel("Bronze Meal Plan");
+		silverMealPlan = new JLabel("Silver Meal Plan");
+		goldMealPlan = new JLabel("Gold Meal Plan");
+		platinumMealPlan = new JLabel("Platinum Meal Plan");
+		
+		centerPanel.add(basicMealPlan);
+		centerPanel.add(bronzeMealPlan);
+		
+		scrollPane = new JScrollPane(centerPanel);
+		this.add(scrollPane, BorderLayout.CENTER);
+	
+		
+	}
+	
+	
 	
 	/* initializes menu bar items and adds them to this window*/
 	private void createMenuBar() {
@@ -237,8 +275,13 @@ public class MainFrame extends JFrame {
 			JMenuItem menuItem = (JMenuItem) click.getSource();
 			String item = menuItem.getText();
 			System.out.println(item);
-			if(item.equals("All")) {
+			if(item.equals("All")) 
+			{
+				
 				System.out.println("VIEW ALL"); //replace 
+				createMealPanel(); 
+				
+				
 			}
 			else if(item.equals("Basic")) System.out.println("VIEW BASIC"); //replace 
 			else if(item.equals("Bronze")) System.out.println("VIEW BRONZE");

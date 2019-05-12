@@ -88,7 +88,7 @@ public class NewReservationFrame extends JFrame{
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		this.createMenuBar();
-		this.createMainPanel();
+		//this.createMainPanel();
 		this.createComponents();
 		this.setVisible(true);
 		
