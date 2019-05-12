@@ -1,17 +1,18 @@
 package MealPlanDecorator;
 
-public class Salad extends MealUpgrade{
+public class IceCreamAddon extends MealUpgrade{
 	
 	GenericMealPlan mealPlan;
 	String description;
+	String flavors; //chocolate, vanilla, and/or strawberry
 
-    public Salad(GenericMealPlan mealPlan) {
+    public IceCreamAddon(GenericMealPlan mealPlan) {
     	
-       this.description = "Salad";
+       this.description = "Ice Cream";
        this.mealPlan = mealPlan;
 
     }
-
+    
 
 	@Override
 	public String getDescription() {

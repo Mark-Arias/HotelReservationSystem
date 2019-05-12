@@ -1,7 +1,7 @@
 package Decorator;
 
 import MealPlanDecorator.BasicMealPlan;
-
+import MealPlanDecorator.BreadSticks;
 import MealPlanDecorator.BronzeMealPlan;
 import MealPlanDecorator.GenericMealPlan;
 import MealPlanDecorator.Salad;
@@ -25,6 +25,8 @@ public class TesterRoom {
 		
 		//adding salad to a bronze plan
 		bznmp = new Salad(bznmp); 
+		//adding bread sticks to the bronze plan
+		bznmp = new BreadSticks(bznmp); 
 	
 		Reservation johnsons = new Reservation(aRoom1, bmp);
 		Reservation smiths = new Reservation(sRoom1, bznmp);

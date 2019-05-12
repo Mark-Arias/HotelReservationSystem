@@ -28,8 +28,9 @@ public class BasicMealPlan extends GenericMealPlan {
     public String getDescription() {
 		String rt = "\n\t\t" + this.mealPlanName
 				+ "\n\t\t" + this.numberOfLargePizzas + " XL " + this.numberOfToppings + " Topping(s) Gourmet Pizza"
-				+ "\n\t\t" + this.numberOfLiterSodas + " 2L Soda Bottles"
-				+ "\n\t\tCost of meal plan: $" + this.cost;
+				+ "\n\t\t" + this.numberOfLiterSodas + " 2L Soda Bottles";
+			//+ "\n\t\tCost of meal plan: $" + this.cost;
+				
     	return rt; 
 	}
 }

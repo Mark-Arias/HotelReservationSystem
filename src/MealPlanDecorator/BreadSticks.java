@@ -1,17 +1,17 @@
 package MealPlanDecorator;
 
-public class Salad extends MealUpgrade{
+public class BreadSticks extends MealUpgrade{
 	
 	GenericMealPlan mealPlan;
 	String description;
 
-    public Salad(GenericMealPlan mealPlan) {
+    public BreadSticks(GenericMealPlan mealPlan) {
     	
-       this.description = "Salad";
+       this.description = "Bread Sticks";
        this.mealPlan = mealPlan;
 
     }
-
+    
 
 	@Override
 	public String getDescription() {
