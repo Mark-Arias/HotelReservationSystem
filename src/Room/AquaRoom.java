@@ -1,6 +1,7 @@
 package Room;
 
 public class AquaRoom extends Observer.Room{
+	
 	  protected int numberOfRoomsAvailable;
 	  protected String description;
 	  protected String restrictions;

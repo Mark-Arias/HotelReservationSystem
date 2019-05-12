@@ -1,4 +1,35 @@
 package MealPlanDecorator;
 
-public class PlatinumMealPlan {
+import java.util.ArrayList;
+
+public class PlatinumMealPlan extends GenericMealPlan{
+	
+	ArrayList<String> chickWingFlavorList= new ArrayList<String>();
+	ArrayList<String> iceCreamFlavorList = new ArrayList<String>();
+	
+	boolean boneless = true;
+    double cost;
+    double basicMealPlanBaseCost = 120; //$65 + any other charges to the plan (if any)
+
+    /**
+     * Constructor for Platinum Meal Plan
+     */
+    public PlatinumMealPlan() {
+        this.numberOfLargePizzas = 3 ;// 3 XL pizzas with one toppings
+        this.numberOfLiterSodas = 5; // number of 2L sodas
+
+        this.numberOfToppings = 3; // 3 toppings available for the pizza
+        this.cost = 120;
+        pizzaToppingList.add("place");
+    }
+    
+	@Override
+    public String getDescription() {
+		String rt = "\n\t\t" + this.mealPlanName
+				+ "\n\t\t" + this.numberOfLargePizzas + " XL " + this.numberOfToppings + " Topping(s) Gourmet Pizza"
+				+ "\n\t\t" + this.numberOfLiterSodas + " 2L Soda Bottles";
+			//+ "\n\t\tCost of meal plan: $" + this.cost;
+		String rt2 = "\n\tTopping Type \n\t\t" + pizzaToppingList.get(1);
+    	return rt + rt2; 
+	}
 }

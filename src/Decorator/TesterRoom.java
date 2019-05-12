@@ -26,6 +26,7 @@ public class TesterRoom {
 		GenericMealPlan bmp3 = new BronzeMealPlan();
 		GenericMealPlan bznmp = new BronzeMealPlan();
 		
+		bmp.setTopping("peppers");
 		//adding salad to a bronze plan
 		bznmp = new Salad(bznmp); 
 		//adding bread sticks to the bronze plan
@@ -35,6 +36,8 @@ public class TesterRoom {
 		bmp2 = new IceCreamAddon(bmp2);
 	
 		bmp3 = new IceCreamAddon(bmp2);
+		bmp3.setTopping("peppers");
+		bmp3.setTopping("onions");
 		
 		Reservation johnsons = new Reservation(aRoom1, bmp);
 		Reservation smiths = new Reservation(sRoom1, bznmp);
