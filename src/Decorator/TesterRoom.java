@@ -1,5 +1,6 @@
 package Decorator;
 
+import MealPlanDecorator.IceCreamAddon;
 import MealPlanDecorator.BasicMealPlan;
 import MealPlanDecorator.BreadSticks;
 import MealPlanDecorator.BronzeMealPlan;
@@ -21,19 +22,25 @@ public class TesterRoom {
 		//System.out.println();
 		
 		GenericMealPlan bmp = new BasicMealPlan();
+		GenericMealPlan bmp2 = new BronzeMealPlan();
+		GenericMealPlan bmp3 = new BronzeMealPlan();
 		GenericMealPlan bznmp = new BronzeMealPlan();
 		
 		//adding salad to a bronze plan
 		bznmp = new Salad(bznmp); 
 		//adding bread sticks to the bronze plan
 		bznmp = new BreadSticks(bznmp); 
+		
+		bmp2 = new Salad(bmp2);
+		bmp2 = new IceCreamAddon(bmp2);
 	
+		bmp3 = new IceCreamAddon(bmp2);
+		
 		Reservation johnsons = new Reservation(aRoom1, bmp);
 		Reservation smiths = new Reservation(sRoom1, bznmp);
-		
 
-		Reservation starks = new Reservation(aRoom1, bmp);
-		Reservation snows = new Reservation(aRoom1, bmp);
+		Reservation starks = new Reservation(aRoom1, bmp2);
+		Reservation snows = new Reservation(sRoom1, bmp3);
 		
 	
 		System.out.println(johnsons.toString());
