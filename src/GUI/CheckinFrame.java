@@ -22,5 +22,7 @@ import javax.swing.JTextArea;
 import javax.swing.border.Border;
 
 public class CheckinFrame extends JFrame{
+	
+	
 
 }

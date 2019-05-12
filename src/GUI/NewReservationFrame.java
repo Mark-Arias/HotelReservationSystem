@@ -12,6 +12,7 @@ import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -30,33 +31,43 @@ public class NewReservationFrame extends JFrame{
 
 	// COMPONENTS 
 	// Guest Info 
-	JTextField guestName;
-	JTextField guestPhone;
-	JTextField guestEmail;
-	JTextField guestAddress;
-	JTextField guestDOB;
+	private JTextField guestName;
+	private JTextField guestPhone;
+	private JTextField guestEmail;
+	private JTextField guestAddress;
+	private JTextField guestDOB;
 	
 	//Guest Info - Contact Method 
-	JCheckBox contactedPhone;
-	JCheckBox contactedEmail;
+	private JCheckBox contactedPhone;
+	private JCheckBox contactedEmail;
 	
 	// Guest Info- CC 
-	JTextField ccName;
-	JTextField ccNum;
-	JTextField ccExp; 
-	JTextField ccCVV; // CC Security Code 
+	private JTextField ccName;
+	private JTextField ccNum;
+	private JTextField ccExp; 
+	private JTextField ccCVV; // CC Security Code 
 	
-	JCheckBox ccVisa;
-	JCheckBox ccMastercard;
-	JCheckBox ccAmericanExpress;
+	private JCheckBox ccVisa;
+	private JCheckBox ccMastercard;
+	private JCheckBox ccAmericanExpress;
 	
 	// Save & Cancel 
-	JButton saveButton;
-	JButton cancelButton; 
+	private JButton saveButton;
+	private JButton cancelButton; 
 	
 	//Labels 
+	private JLabel guestNameLabel;
+	private JLabel guestPhoneLabel;
+	private JLabel guestEmailLabel;
+	private JLabel guestAddressLabel;
+	private JLabel guestDOBLabel;
 	
+	private JLabel contactMethodLabel; 
 	
+	private JLabel ccNameLabel;
+	private JLabel ccNumLabel;
+	private JLabel ccExpLabel;
+	private JLabel ccCVVLabel;
 	
 
 	JMenuBar menuBar;
@@ -82,18 +93,45 @@ public class NewReservationFrame extends JFrame{
 	
 	public void createComponents()
 	{
+		// GUEST INFORMATION 
+		guestNameLabel = new JLabel("Guest name: ");
+		guestName = new JTextField("", 20);
+		
+		guestPhoneLabel = new JLabel("Phone: ");
+		guestPhone = new JTextField("", 20);
+		
+		guestEmailLabel = new JLabel("Email: ");
+		guestEmail = new JTextField("", 20);
+		
+		guestAddressLabel = new JLabel("Address: ");
+		guestAddress = new JTextField("", 20);
+		
+		// Temp 
+		// Use J Spinner 
+		guestDOBLabel = new JLabel("Date of Birth: ");
+		guestDOB = new JTextField("", 20);
+		
+		// Credit Card Information 
+		
+				
+		
+		
+		
+		
+		textField = new JTextField("", 20);
+		flavorLabel = new JLabel("flavor: ");
+		String [] flavors = {"regular", "mocha", "hazlenut", "vanilla"};
+		flavorOpts = new JComboBox<String>(flavors);
+		
+
 	}
 	
 	
 	
+
 	
-	
-	
-	
-	
-	
-	
-	
+	//..................................................................................
+
 	
 	/*
 	 * initializes the default center panel and adds it to this frame
