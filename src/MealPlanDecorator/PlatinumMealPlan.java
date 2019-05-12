@@ -15,6 +15,7 @@ public class PlatinumMealPlan extends GenericMealPlan{
      * Constructor for Platinum Meal Plan
      */
     public PlatinumMealPlan() {
+    	this.mealPlanName = "Platinum Meal Plan";
         this.numberOfLargePizzas = 3 ;// 3 XL pizzas with one toppings
         this.numberOfLiterSodas = 5; // number of 2L sodas
 

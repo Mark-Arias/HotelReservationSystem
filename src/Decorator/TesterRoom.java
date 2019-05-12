@@ -5,6 +5,7 @@ import MealPlanDecorator.BasicMealPlan;
 import MealPlanDecorator.BreadSticks;
 import MealPlanDecorator.BronzeMealPlan;
 import MealPlanDecorator.GenericMealPlan;
+import MealPlanDecorator.GoldMealPlan;
 import MealPlanDecorator.Salad;
 import Observer.Reservation;
 import Observer.Room;
@@ -25,6 +26,7 @@ public class TesterRoom {
 		GenericMealPlan bmp2 = new BronzeMealPlan();
 		GenericMealPlan bmp3 = new BronzeMealPlan();
 		GenericMealPlan bznmp = new BronzeMealPlan();
+		GenericMealPlan gldmp = new GoldMealPlan();
 		
 		bmp.setTopping("peppers");
 		//adding salad to a bronze plan
@@ -43,7 +45,7 @@ public class TesterRoom {
 		Reservation smiths = new Reservation(sRoom1, bznmp);
 
 		Reservation starks = new Reservation(aRoom1, bmp2);
-		Reservation snows = new Reservation(sRoom1, bmp3);
+		Reservation snows = new Reservation(sRoom1, gldmp);
 		
 	
 		System.out.println(johnsons.toString());
