@@ -42,6 +42,7 @@ public class MainFrame extends JFrame {
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH); //makes window screen size
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
+	
 		this.createMenuBar();
 		this.createDefaultPanel();
 		this.setVisible(true);
@@ -57,7 +58,7 @@ public class MainFrame extends JFrame {
 		centerPanel = new JPanel();
 		centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.Y_AXIS));
 		//Title of default view
-		JLabel panelTitle = new JLabel("Party World Rooms");
+		JLabel panelTitle = new JLabel("Guest Reservation");
 		panelTitle.setFont(new Font(Font.SERIF, Font.BOLD, 30));
 		
 		

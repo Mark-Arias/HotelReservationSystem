@@ -89,21 +89,23 @@ public class NewReservationFrame extends JFrame{
 		
 		this.createMenuBar();
 		this.createMainPanel();
+		this.createComponents();
 		this.setVisible(true);
 		
 	}
+	
 	
 	public void createComponents()
 	{
 		// GUEST INFORMATION 
 		guestNameLabel = new JLabel("Guest name: ");
-		guestName = new JTextField("", 20);
+		guestName = new JTextField("", 15);
 		
 		guestPhoneLabel = new JLabel("Phone: ");
-		guestPhone = new JTextField("", 20);
+		guestPhone = new JTextField("", 10);
 		
 		guestEmailLabel = new JLabel("Email: ");
-		guestEmail = new JTextField("", 20);
+		guestEmail = new JTextField("", 15);
 		
 		guestAddressLabel = new JLabel("Address: ");
 		guestAddress = new JTextField("", 20);
@@ -111,12 +113,12 @@ public class NewReservationFrame extends JFrame{
 		// Temp 
 		// Use J Spinner 
 		guestDOBLabel = new JLabel("Date of Birth: ");
-		guestDOB = new JTextField("", 20);
+		guestDOB = new JTextField("", 5);
 		
 		
 		// CREDIT CARD INFORMATION
 		ccNameLabel = new JLabel("Name: ");
-		ccName = new JTextField("", 20);
+		ccName = new JTextField("", 15);
 		
 		ccTypeLabel = new JLabel("Type: ");
 		ccVisa = new JCheckBox("Visa");
@@ -125,18 +127,19 @@ public class NewReservationFrame extends JFrame{
 		
 		
 		ccNumLabel = new JLabel("Number: ");
-		ccNum = new JTextField("", 20);
+		ccNum = new JTextField("", 10);
 		
 		ccExpLabel = new JLabel("Exp Date: ");
-		ccExp = new JTextField("", 20);
+		ccExp = new JTextField("", 5);
 		
 		ccCVVLabel = new JLabel("CVV: ");
-		ccCVV = new JTextField("", 20); 
+		ccCVV = new JTextField("", 5); 
 		
 		saveButton = new JButton("Save");
 		cancelButton = new JButton("Cancel");
 		
 		// Create the panel 
+		JPanel mainPanel = new JPanel(); 
 		JPanel guestPanel = new JPanel();
 		JPanel ccPanel = new JPanel();
 		JPanel footerPanel = new JPanel();
@@ -172,9 +175,12 @@ public class NewReservationFrame extends JFrame{
 		footerPanel.add(cancelButton);
 		
 		// Add panels to the frame 
-		this.add(guestPanel);
-		this.add(ccPanel);
-		this.add(footerPanel);
+		mainPanel.add(guestPanel);
+		mainPanel.add(ccPanel);
+		mainPanel.add(footerPanel);
+		
+		this.add(mainPanel);		
+		
 		
 		
 		// Add the action listeners to the corresponding buttons 
@@ -182,8 +188,6 @@ public class NewReservationFrame extends JFrame{
 	}
 	
 	
-	
-
 	
 	//..................................................................................
 
@@ -195,7 +199,7 @@ public class NewReservationFrame extends JFrame{
 		centerPanel = new JPanel();
 		centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.Y_AXIS));
 		//Title of default view
-		JLabel panelTitle = new JLabel("Party World Rooms");
+		JLabel panelTitle = new JLabel("Guest Reservation");
 		panelTitle.setFont(new Font(Font.SERIF, Font.BOLD, 30));
 		
 		centerPanel.add(panelTitle);
@@ -316,5 +320,5 @@ public class NewReservationFrame extends JFrame{
 				menuBar.add(menu);
 				this.add(menuBar, BorderLayout.NORTH);
 	}
-}
+	}
 	
