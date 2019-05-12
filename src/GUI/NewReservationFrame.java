@@ -65,6 +65,7 @@ public class NewReservationFrame extends JFrame{
 	private JLabel contactMethodLabel; 
 	
 	private JLabel ccNameLabel;
+	private JLabel ccTypeLabel;
 	private JLabel ccNumLabel;
 	private JLabel ccExpLabel;
 	private JLabel ccCVVLabel;
@@ -116,6 +117,12 @@ public class NewReservationFrame extends JFrame{
 		ccNameLabel = new JLabel("Name: ");
 		ccName = new JTextField("", 20);
 		
+		ccTypeLabel = new JLabel("Type: ");
+		ccVisa = new JCheckBox("Visa");
+		ccMastercard = new JCheckBox("Mastercard");
+		ccAmericanExpress = new JCheckBox("American Express");
+		
+		
 		ccNumLabel = new JLabel("Number: ");
 		ccNum = new JTextField("", 20);
 		
@@ -126,14 +133,6 @@ public class NewReservationFrame extends JFrame{
 		ccCVV = new JTextField("", 20); 
 		
 				
-		
-		
-		
-		
-		textField = new JTextField("", 20);
-		flavorLabel = new JLabel("flavor: ");
-		String [] flavors = {"regular", "mocha", "hazlenut", "vanilla"};
-		flavorOpts = new JComboBox<String>(flavors);
 		
 
 	}
