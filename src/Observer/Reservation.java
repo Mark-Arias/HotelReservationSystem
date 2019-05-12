@@ -9,6 +9,7 @@ import java.util.Date;
  */
 public class Reservation
 {
+	static int reservationCounter = 0;
     private Date date;
     private int time;
     private Room room;
@@ -18,9 +19,20 @@ public class Reservation
     private String confirmationNumber;
     private String upgrades;
     private String specialInstructions;
-
+    private int reservationNumber; 
+    
+    
+    public Reservation (Room room, GenericMealPlan mealPlan) {
+    	reservationCounter++;
+    	this.room = room;
+    	this.mealPlan = mealPlan;
+    	this.reservationNumber = reservationCounter;
+    	
+    	
+    	
+    }
     /**
-     *
+     * 
      * @param date
      * @param room
      */
@@ -31,6 +43,7 @@ public class Reservation
         this.guest = guest;
         this.isFinalized = false;
     }
+    
 
 
     /**
@@ -120,4 +133,28 @@ public class Reservation
     public void finalizeReservation() {
         this.isFinalized = true;
     }
+    
+    public  int getReservationNumber() {
+    	return reservationNumber;
+    }
+    
+    public String toString() {
+    	String rt = "Reservation number: " + this.reservationNumber
+    			+ "\nRoom reserved: " + room.toString() 
+    			+ "\nMeal Plan: " + mealPlan.toString();
+    	return rt;
+    			
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+

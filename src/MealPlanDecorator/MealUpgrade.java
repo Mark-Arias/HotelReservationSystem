@@ -4,7 +4,7 @@ public class MealUpgrade extends GenericMealPlan{
 	
 
 
-    public BronzeMealPlan() {
+    public MealUpgrade() {
     	
         this.numberOfLargePizzas = 3 ;// 3 XL pizzas with one toppings
         this.numberOfLiterSodas = 5 ;// customer gets 3 large sodas
@@ -18,4 +18,10 @@ public class MealUpgrade extends GenericMealPlan{
     	return rt; 
     	
     }
+
+	@Override
+	public String getDescription() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

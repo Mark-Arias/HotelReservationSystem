@@ -16,8 +16,14 @@ public class BasicMealPlan extends GenericMealPlan {
     }
     
     public String toString() {
-    	String rt = super.toString() + "\nTotal room cost: " + cost;
+    	String rt = "Basic Meal Plan\n"+ super.toString() + "\nTotal meal cost: " + cost;
     	return rt; 
     	
     }
+
+	@Override
+	public String getDescription() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -1,15 +1,17 @@
 package MealPlanDecorator;
 
-public class GenericMealPlan extends Decorator.Upgrades{
+public abstract class GenericMealPlan {
     int numberOfLargePizzas;
     int numberOfToppings;
     int numberOfLiterSodas;
     double cost;
     
     public String toString() {
-    	String rt = "Number of XL pizzas " + numberOfLargePizzas 
-    				+ "\nNumber of two liter sodas: " + numberOfLiterSodas;
+    	String rt = "\tNumber of XL pizzas " + numberOfLargePizzas 
+    				+ "\n\tNumber of two liter sodas: " + numberOfLiterSodas;
     	
     	return rt;
     }
+
+    public abstract String getDescription();
 }
