@@ -36,8 +36,8 @@ public class TesterRoom {
 		
 		bmp2 = new Salad(bmp2);
 		bmp2 = new IceCreamAddon(bmp2);
-	
 		bmp3 = new IceCreamAddon(bmp2);
+		
 		bmp3.setTopping("peppers");
 		bmp3.setTopping("onions");
 		
