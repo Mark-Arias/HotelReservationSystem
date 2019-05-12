@@ -71,6 +71,7 @@ public class NewReservationFrame extends JFrame{
 	private JLabel ccCVVLabel;
 	
 
+
 	JMenuBar menuBar;
 	JScrollPane scrollPane;
 	JPanel centerPanel;
@@ -132,8 +133,51 @@ public class NewReservationFrame extends JFrame{
 		ccCVVLabel = new JLabel("CVV: ");
 		ccCVV = new JTextField("", 20); 
 		
+		saveButton = new JButton("Save");
+		cancelButton = new JButton("Cancel");
+		
+		// Create the panel 
+		JPanel guestPanel = new JPanel();
+		JPanel ccPanel = new JPanel();
+		JPanel footerPanel = new JPanel();
+		
+	
 				
-		// // adding 
+		// Add the components to the panel 
+		guestPanel.add(guestNameLabel);
+		guestPanel.add(guestName);
+		guestPanel.add(guestPhoneLabel);
+		guestPanel.add(guestPhone);
+		guestPanel.add(guestEmailLabel);
+		guestPanel.add(guestEmail);
+		guestPanel.add(guestAddressLabel);
+		guestPanel.add(guestAddress);
+		guestPanel.add(guestDOBLabel);
+		guestPanel.add(guestDOB);
+		
+		ccPanel.add(ccNameLabel);
+		ccPanel.add(ccTypeLabel);
+		ccPanel.add(ccTypeLabel);
+		ccPanel.add(ccVisa);
+		ccPanel.add(ccMastercard);
+		ccPanel.add(ccAmericanExpress); 
+		ccPanel.add(ccNumLabel);
+		ccPanel.add(ccNum); 
+		ccPanel.add(ccExpLabel);
+		ccPanel.add(ccExp);
+		ccPanel.add(ccCVVLabel);
+		ccPanel.add(ccCVV);
+		
+		footerPanel.add(saveButton);
+		footerPanel.add(cancelButton);
+		
+		// Add panels to the frame 
+		this.add(guestPanel);
+		this.add(ccPanel);
+		this.add(footerPanel);
+		
+		
+		// Add the action listeners to the corresponding buttons 
 
 	}
 	
