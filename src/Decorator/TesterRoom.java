@@ -1,8 +1,12 @@
 package Decorator;
 
+import MealPlanDecorator.IceCreamAddon;
 import MealPlanDecorator.BasicMealPlan;
-
+import MealPlanDecorator.BreadSticks;
 import MealPlanDecorator.BronzeMealPlan;
+import MealPlanDecorator.GenericMealPlan;
+import MealPlanDecorator.GoldMealPlan;
+import MealPlanDecorator.Salad;
 import Observer.Reservation;
 import Observer.Room;
 
@@ -18,17 +22,30 @@ public class TesterRoom {
 		//System.out.println(aRoom1.toString());
 		//System.out.println();
 		
-		BasicMealPlan bmp = new BasicMealPlan();
-		BronzeMealPlan bznmp = new BronzeMealPlan();
-		//System.out.println(bmp.toString());
-		//System.out.println();
+		GenericMealPlan bmp = new BasicMealPlan();
+		GenericMealPlan bmp2 = new BronzeMealPlan();
+		GenericMealPlan bmp3 = new BronzeMealPlan();
+		GenericMealPlan bznmp = new BronzeMealPlan();
+		GenericMealPlan gldmp = new GoldMealPlan();
+		
+		bmp.setTopping("peppers");
+		//adding salad to a bronze plan
+		bznmp = new Salad(bznmp); 
+		//adding bread sticks to the bronze plan
+		bznmp = new BreadSticks(bznmp); 
+		
+		bmp2 = new Salad(bmp2);
+		bmp2 = new IceCreamAddon(bmp2);
+	
+		bmp3 = new IceCreamAddon(bmp2);
+		bmp3.setTopping("peppers");
+		bmp3.setTopping("onions");
 		
 		Reservation johnsons = new Reservation(aRoom1, bmp);
 		Reservation smiths = new Reservation(sRoom1, bznmp);
-		
-		Reservation kens = new Reservation(aRoom1, bmp);
-		Reservation starks = new Reservation(aRoom1, bmp);
-		Reservation snows = new Reservation(aRoom1, bmp);
+
+		Reservation starks = new Reservation(aRoom1, bmp2);
+		Reservation snows = new Reservation(sRoom1, gldmp);
 		
 	
 		System.out.println(johnsons.toString());
@@ -36,9 +53,7 @@ public class TesterRoom {
 		
 		System.out.println(smiths.toString());
 		System.out.println();
-		
-		System.out.println(kens.toString());
-		System.out.println();
+
 		
 		System.out.println(starks.toString());
 		System.out.println();

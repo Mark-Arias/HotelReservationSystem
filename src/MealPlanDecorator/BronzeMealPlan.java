@@ -10,12 +10,17 @@ public class BronzeMealPlan extends GenericMealPlan{
         this.numberOfLiterSodas = 5 ;// customer gets 3 large sodas
         this.numberOfToppings = 2;
         this.cost = 75;
+        pizzaToppingList.add("place");
 
     }
     
-//    public String toString() {
-//    	String rt = super.toString() + "\nTotal room cost: " + cost;
-//    	return rt; 
-//    	
-//    }
+	@Override
+    public String getDescription() {
+		String rt = "\n\t\t" + this.mealPlanName
+				+ "\n\t\t" + this.numberOfLargePizzas + " XL " + this.numberOfToppings + " Topping(s) Gourmet Pizza"
+				+ "\n\t\t" + this.numberOfLiterSodas + " 2L Soda Bottles";
+			//+ "\n\t\tCost of meal plan: $" + this.cost;
+		String rt2 = "\n\tTopping Type \n\t\t" + pizzaToppingList.get(0);
+    	return rt + rt2; 
+	}
 }
