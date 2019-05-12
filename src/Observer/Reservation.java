@@ -140,8 +140,8 @@ public class Reservation
     
     public String toString() {
     	String rt = "Reservation number: " + this.reservationNumber
-    			+ "\nRoom reserved: " + room.toString() 
-    			+ "\nMeal Plan: " + mealPlan.toString();
+    			+ "\n\tRoom reserved: " + room.getDescription()
+    			+ "\n\tMeal Plan: " + mealPlan.getDescription();
     	return rt;
     			
     }

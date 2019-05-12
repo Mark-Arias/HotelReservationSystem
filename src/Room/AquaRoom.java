@@ -1,4 +1,5 @@
 package Room;
+
 public class AquaRoom extends Observer.Room{
   protected int numberOfRoomsAvailable;
   protected String description;
@@ -6,12 +7,11 @@ public class AquaRoom extends Observer.Room{
   protected double cost;
   
   public AquaRoom() {
-	  //super(capacity, isAvailable);
-	  //String amenities, int capacity, boolean isAvailable
+
 	  this.numberOfRoomsAvailable = 1;
 
-	  this.description = "Aqua Room" +  ""
-	  				+ "\n\tOlympic-sized pool with water slide, kiddie pool, and large jacuzzi";
+	  this.description = "\n\t\tAqua Room"
+	  				+ "\n\t\tDescription: Olympic-sized pool with water slide, kiddie pool, and large jacuzzi";
 	  
 	  this.restrictions ="To access water facilities, bathing suits must be worn at all times";
 	  this.cost = 700; 
@@ -22,7 +22,9 @@ public class AquaRoom extends Observer.Room{
   
   public String getDescription()
   {
-	  return this.description;
+	  String rt = this.description 
+			  + "\n\t\tRoom Cost: " + this.cost;
+	  return rt;
   }
   
   public void setDescription(String description)

@@ -1,17 +1,18 @@
 package Room;
 
-public class SmallPartyRoom{
-  int numberOfRoomsAvailable;
-  String description;
-  String restrictions;
-  double cost;
+public class SmallPartyRoom extends Observer.Room{
+	  protected int numberOfRoomsAvailable;
+	  protected String description;
+	  protected String restrictions;
+	  protected double cost;
 	  
   public SmallPartyRoom()
   {
 	  this.numberOfRoomsAvailable = 3;
-	  this.description = "";
+	  this.description = "\n\t\tSmall Party Room"
+			  			+ "\n\t\tDescription: Room with party tables and chairs, adjacent to arcade.";
 	  this.restrictions = "";
-	  this.cost = 5.00; 
+	  this.cost = 150; //$150 / hr 
   }
   public double getCost(){
 	  return cost;
@@ -23,7 +24,9 @@ public class SmallPartyRoom{
   
   public String getDescription()
   {
-	  return description;
+	  String rt = this.description 
+			  + "\n\t\tRoom Cost: " + this.cost;
+	  return rt;
   }
   
   
