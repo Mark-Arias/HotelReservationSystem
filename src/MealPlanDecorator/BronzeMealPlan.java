@@ -12,10 +12,12 @@ public class BronzeMealPlan extends GenericMealPlan{
         this.cost = 75;
 
     }
-    
-//    public String toString() {
-//    	String rt = super.toString() + "\nTotal room cost: " + cost;
-//    	return rt; 
-//    	
-//    }
+    @Override
+	public String getDescription() {
+		String rt = "\n\t\t" + this.mealPlanName
+				+ "\n\t\t" + this.numberOfLargePizzas + " XL " + this.numberOfToppings + " Topping(s) Gourmet Pizza"
+				+ "\n\t\t" + this.numberOfLiterSodas + " 2L Soda Bottles"
+				+ "\n\t\tCost of meal plan: $" + this.cost;
+    	return rt; 
+	}
 }

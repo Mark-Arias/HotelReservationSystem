@@ -1,10 +1,10 @@
 package Room;
 
 public class AquaRoom extends Observer.Room{
-  protected int numberOfRoomsAvailable;
-  protected String description;
-  protected String restrictions;
-  protected double cost;
+	  protected int numberOfRoomsAvailable;
+	  protected String description;
+	  protected String restrictions;
+	  protected double cost;
   
   public AquaRoom() {
 

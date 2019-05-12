@@ -3,6 +3,8 @@ package Decorator;
 import MealPlanDecorator.BasicMealPlan;
 
 import MealPlanDecorator.BronzeMealPlan;
+import MealPlanDecorator.GenericMealPlan;
+import MealPlanDecorator.Salad;
 import Observer.Reservation;
 import Observer.Room;
 
@@ -18,15 +20,16 @@ public class TesterRoom {
 		//System.out.println(aRoom1.toString());
 		//System.out.println();
 		
-		BasicMealPlan bmp = new BasicMealPlan();
-		BronzeMealPlan bznmp = new BronzeMealPlan();
-		//System.out.println(bmp.toString());
-		//System.out.println();
+		GenericMealPlan bmp = new BasicMealPlan();
+		GenericMealPlan bznmp = new BronzeMealPlan();
 		
+		//adding salad to a bronze plan
+		bznmp = new Salad(bznmp); 
+	
 		Reservation johnsons = new Reservation(aRoom1, bmp);
 		Reservation smiths = new Reservation(sRoom1, bznmp);
 		
-		Reservation kens = new Reservation(aRoom1, bmp);
+
 		Reservation starks = new Reservation(aRoom1, bmp);
 		Reservation snows = new Reservation(aRoom1, bmp);
 		
@@ -36,9 +39,7 @@ public class TesterRoom {
 		
 		System.out.println(smiths.toString());
 		System.out.println();
-		
-		System.out.println(kens.toString());
-		System.out.println();
+
 		
 		System.out.println(starks.toString());
 		System.out.println();

@@ -6,11 +6,11 @@ public abstract class MealUpgrade extends GenericMealPlan{
 
 
     
-    public String toString() {
-    	String rt = super.toString() + "\nTotal room cost: " + cost;
-    	return rt; 
-    	
-    }
+//    public String toString() {
+//    	String rt = super.toString() + "\nTotal room cost: " + cost;
+//    	return rt; 
+//    	
+//    }
 
 	@Override
 	public abstract String getDescription();
