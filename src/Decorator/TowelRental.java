@@ -12,6 +12,7 @@ public class TowelRental extends Upgrades {
         this.room = room;
     }
 
+    @Override
     public String getDescription()
     {
         return room.getDescription() + ", Towel Rental";

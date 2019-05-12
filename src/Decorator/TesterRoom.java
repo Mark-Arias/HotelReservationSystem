@@ -25,10 +25,14 @@ public class TesterRoom {
 		AquaRoom aRoom2 = new AquaRoom();
 		
 		//decorate it 
-		aRoom2 = new TowelRental(aRoom2); 
+		//aRoom2 = new TowelRental(aRoom2); 
 		// 
 		Room room1 = new Room("", 2, true);
 		room1 = new TowelRental(room1); 
+		
+		System.out.println(room1.getDescription()); 
+		
+		
 			
 	}
 }

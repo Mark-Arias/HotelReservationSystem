@@ -37,7 +37,7 @@ public class Room
     }
 
 
-    /**
+    /*\
      *
      * @param upgrade
      */
@@ -95,8 +95,8 @@ public class Room
     *
     * @return
     */
-   public double getDescription(){
-       return cost;
+   public String getDescription(){
+       return description;
    }
 
     // Methods below associated with Observer Design Pattern -------------------------------------------------------

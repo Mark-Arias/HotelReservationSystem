@@ -13,11 +13,7 @@ public class AquaRoom{
 	  this.restrictions ="To access water facilities, bathing suits must be worn at all times";
 	  this.cost = 700; 
 
-<<<<<<< HEAD
 
-=======
-	  this.description = "";
->>>>>>> branch 'master' of https://github.com/Mark-Arias/HotelReservationSystem.git
 
   }
   
