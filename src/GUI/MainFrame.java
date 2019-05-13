@@ -26,6 +26,7 @@ import javax.swing.border.Border;
 import Room.AquaRoom;
 import Room.MediumPartyRoom;
 import Room.SmallPartyRoom;
+//import MainFrame.ClickListener;
 
 public class MainFrame extends JFrame {
 	
@@ -79,9 +80,9 @@ public class MainFrame extends JFrame {
 		//Temporarily hard coded the descriptions
 		addARoomDescription(centerPanel, "/Users/ashley/Desktop/temp02.PNG", "Small Party Room" , "Small Party Room"
 	  			+ "\nDescription: Room with party tables and chairs, adjacent to arcade.");
-		addARoomDescription(centerPanel, "/Users/ashley/Desktop/temp02.PNG", "Small Party Room" , "Medium Party Room"
+		addARoomDescription(centerPanel, "/Users/ashley/Desktop/temp02.PNG", "Medium Party Room" , "Medium Party Room"
 	  			+ "\nDescription: Room with party tables and chairs, adjacent to arcade.");
-		addARoomDescription(centerPanel, "/Users/ashley/Desktop/temp02.PNG", "Small Party Room" , "Aqua Party Room"
+		addARoomDescription(centerPanel, "/Users/ashley/Desktop/temp02.PNG", "Aqua Party Room" , "Aqua Party Room"
 	  			+ "\nDescription: Room with party tables and chairs, adjacent to arcade.");
 		
 		scrollPane = new JScrollPane(centerPanel);
@@ -261,7 +262,10 @@ public class MainFrame extends JFrame {
 		 	description.setBorder(BorderFactory.createCompoundBorder(raisedbevel, loweredbevel));
 			p.add(description);
 			
+			
+			ActionListener buttonListener = new BookNowButtonListener();
 	        JButton bookButton = new JButton("Book Now");
+	        bookButton.addActionListener(buttonListener);
 	        p.add(bookButton);
 	        container.add(p);
 	    }
@@ -290,10 +294,17 @@ public class MainFrame extends JFrame {
 		}
 		
 	}
-	
+	class BookNowButtonListener implements ActionListener {
+		@Override
+		public void actionPerformed (ActionEvent event) {
+			Object source = event.getSource();
+			
+			System.out.println(source);
+		}
+	}
 
 	
-	
+
 	class RoomItemListener implements ActionListener{
 
 		@Override
