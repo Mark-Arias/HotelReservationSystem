@@ -124,6 +124,8 @@ public class MainFrame extends JFrame {
 				JMenu menu;
 				JMenu submenu;
 				JMenuItem menuItem;
+				JMenuItem newReservationMenuItem;
+				JMenuItem editReservationMenuItem;
 				
 				//-------  DESCRIPTIONS MENU------------------
 				menu = new JMenu("Descriptions");
@@ -200,8 +202,10 @@ public class MainFrame extends JFrame {
 				//-------  RESERVATIONS MENU------------------
 				menu = new JMenu("Reservations");
 						
+						ActionListener MenuItemListener = new MenuItemListener();
 						//New reservation item
 						menuItem = new JMenuItem("New Reservation...");
+						menuItem.addActionListener(MenuItemListener);
 						menu.add(menuItem);
 						menu.addSeparator();
 						
@@ -275,8 +279,28 @@ public class MainFrame extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			Object source = e.getSource();
-			System.out.println(source);
+			Object source = e.getActionCommand();
+			switch(source.toString()) {
+				case "New Reservation...":
+					System.out.println("NR");
+					break;
+					
+				case "Edit Existing Reservation...":
+					System.out.println("ER");
+					break;
+					
+				case "Check-in":
+					System.out.println("CI");
+					break;
+					
+				case "Check-out":
+					System.out.println("CO");
+					break;
+			}
+			
+			
+				
+		
 		}
 		
 		
