@@ -147,19 +147,23 @@ public class MainFrame extends JFrame {
 				submenu.add(menuItem);
 				
 				menuItem = new JMenuItem("Aqua Room");
+				menuItem.addActionListener(new RoomItemListener());
 				submenu.add(menuItem);
 				menu.add(submenu);
 				
 				//Lounges Sub Menu
 				submenu = new JMenu("Lounges");
 				
-				menuItem = new JMenuItem("All");
+				menuItem = new JMenuItem("All Lounges");
+				menuItem.addActionListener(new MealItemListener());
 				submenu.add(menuItem);
 				
 				menuItem = new JMenuItem("Karaoke Lounges");
+				menuItem.addActionListener(new MealItemListener());
 				submenu.add(menuItem);
 				
 				menuItem = new JMenuItem("Billiards Lounges");
+				menuItem.addActionListener(new MealItemListener());
 				submenu.add(menuItem);
 				
 				menu.add(submenu);
@@ -211,6 +215,7 @@ public class MainFrame extends JFrame {
 						
 						//Edit reservation item
 						menuItem = new JMenuItem("Edit Existing Reservation...");
+						menuItem.addActionListener(MenuItemListener);
 						menu.add(menuItem);
 						menu.addSeparator();
 						
@@ -220,9 +225,11 @@ public class MainFrame extends JFrame {
 						submenu.setMnemonic(KeyEvent.VK_S);
 
 						menuItem = new JMenuItem("Check-in");
+						menuItem.addActionListener(MenuItemListener);
 						submenu.add(menuItem);
 						
 						menuItem = new JMenuItem("Check-out");
+						menuItem.addActionListener(MenuItemListener);
 						submenu.add(menuItem);
 						
 
@@ -281,6 +288,35 @@ public class MainFrame extends JFrame {
 			// TODO Auto-generated method stub
 			Object source = e.getActionCommand();
 			switch(source.toString()) {
+				case "All Rooms":
+					System.out.println("all rooms");
+					break;
+				case "Small Party Rooms":
+					System.out.println("small party rooms");
+					break;
+				case "Medium Party Rooms":
+					System.out.println("medium party rooms");
+					break;
+				case "Aqua Room":
+					System.out.println("aqua room");
+					break;
+				
+			
+				//Lounges
+				case "All Lounges":
+					System.out.println("all lounges");
+					break;
+					
+				case "Karaoke Lounges":
+					System.out.println("karaoke lounges");
+					break;
+					
+				case "Billiards Lounges":
+					System.out.println("billiards lounges");
+					break;
+				
+				
+					
 				case "New Reservation...":
 					System.out.println("NR");
 					break;
@@ -310,22 +346,46 @@ public class MainFrame extends JFrame {
 	class MealItemListener implements ActionListener{
 
 		@Override
-		public void actionPerformed(ActionEvent click) {
-			JMenuItem menuItem = (JMenuItem) click.getSource();
-			String item = menuItem.getText();
-			System.out.println(item);
-			if(item.equals("All")) 
-			{
+		public void actionPerformed(ActionEvent e) {
+//			JMenuItem menuItem = (JMenuItem) click.getSource();
+//			String item = menuItem.getText();
+//			System.out.println(item);
+//			if(item.equals("All")) 
+//			{
+//				
+//				System.out.println("VIEW ALL"); //replace 
+//				createMealPanel(); 
+//				
+//				
+//			}
+//			else if(item.equals("Basic")) System.out.println("VIEW BASIC"); //replace 
+//			else if(item.equals("Bronze")) System.out.println("VIEW BRONZE");
+			//Meal Plan
+			Object source = e.getActionCommand();
+			switch(source.toString()) {
+			case "All":
+				System.out.println("all");
+				break;
+			case "Basic":
+				System.out.println("bc");
+				break;
+			case "Bronze":
+				System.out.println("be");
+				break;
 				
-				System.out.println("VIEW ALL"); //replace 
-				createMealPanel(); 
+			case "Silver":
+				System.out.println("sr");
+				break;
 				
+			case "Gold":
+				System.out.println("gd");
+				break;
 				
-			}
-			else if(item.equals("Basic")) System.out.println("VIEW BASIC"); //replace 
-			else if(item.equals("Bronze")) System.out.println("VIEW BRONZE");
+			case "Platinum":
+				System.out.println("pl");
+				break;
 			
-			
+		}
 		}
 		
 	}
@@ -346,8 +406,25 @@ public class MainFrame extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent select) {
 			JMenuItem item = (JMenuItem) select.getSource();
+			switch(item.getText()) {
+			case "All":
+				System.out.println("All");
+				break;
+			case  "Small Party Rooms":
+				System.out.println("small party rooms");
+				break;
+			case "Medium Party Rooms":
+				System.out.println("medium party rooms");
+				break;
+			case "Aqua Room":
+				System.out.println("Aqua room");
+				break;
+			}
 			
-			if(item.getText().equals("Medium Party Rooms")) System.out.println("Display only Medium Party Room");
+			
+//			if(item.getText().equals("Medium Party Rooms")) {
+//				System.out.println("Display only Medium Party Room");
+//			}
 			
 		}}
 	
