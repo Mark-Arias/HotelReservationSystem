@@ -270,7 +270,18 @@ public class MainFrame extends JFrame {
 	        container.add(p);
 	    }
 
+	class MenuItemListener implements ActionListener {
 
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			Object source = e.getSource();
+			System.out.println(source);
+		}
+		
+		
+		
+	}
 	
 	class MealItemListener implements ActionListener{
 
@@ -298,8 +309,9 @@ public class MainFrame extends JFrame {
 		@Override
 		public void actionPerformed (ActionEvent event) {
 			Object source = event.getSource();
+			JFrame newReservation = new NewReservationFrame();
 			
-			System.out.println(source);
+			//System.out.println(source.toString() );
 		}
 	}
 

@@ -85,7 +85,7 @@ public class NewReservationFrame extends JFrame{
 	{
 		this.setTitle("New Reservation");
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH); //makes window screen size
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
 		this.createMenuBar();
 		//this.createMainPanel();
@@ -136,7 +136,10 @@ public class NewReservationFrame extends JFrame{
 		ccCVV = new JTextField("", 5); 
 		
 		saveButton = new JButton("Save");
-		cancelButton = new JButton("Cancel");
+		
+		ActionListener cancelButtonListener = new CancelButton();
+		cancelButton = new JButton("Cancel");//ActionListener needs to go back to previous page
+		cancelButton.addActionListener(cancelButtonListener);
 		
 		// Create the panel 
 		JPanel mainPanel = new JPanel(); 
@@ -320,5 +323,16 @@ public class NewReservationFrame extends JFrame{
 				menuBar.add(menu);
 				this.add(menuBar, BorderLayout.NORTH);
 	}
+	
+	class CancelButton implements ActionListener {
+		@Override
+		public void actionPerformed (ActionEvent event) {
+			Object source = event.getSource();
+			dispose();
+			
+			//System.out.println(source.toString() );
+		}
+	}
+	
 	}
 	
