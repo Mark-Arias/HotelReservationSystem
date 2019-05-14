@@ -47,6 +47,7 @@ public class MainFrame extends JFrame {
 	
 	// Meal Plan Labels 
 	private JLabel basicMealPlan;
+	
 	private JLabel bronzeMealPlan;
 	private JLabel silverMealPlan;
 	private JLabel goldMealPlan;
