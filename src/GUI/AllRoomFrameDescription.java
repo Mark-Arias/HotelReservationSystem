@@ -67,6 +67,7 @@ public class AllRoomFrameDescription extends JFrame{
 		
 	}
 	public void createComponents() {
+		
 		smallRoomLabel = new JLabel("Small Room Description");
 		JTextArea smRD = new JTextArea(spR.getDescription());
 		
