@@ -336,6 +336,7 @@ public class MainFrame extends JFrame {
 				
 			case "Silver":
 				System.out.println("sr");
+				//test
 				break;
 				
 			case "Gold":
