@@ -50,6 +50,12 @@ public class MainFrame extends JFrame {
 	private JLabel goldMealPlan;
 	private JLabel platinumMealPlan;
 	
+	AdultBilliardsLounge abD;
+	AquaRoom arD;
+	KaraokeRoom krD ;
+	MediumPartyRoom mpD;
+	SmallPartyRoom spR ;
+	
 	
 	//border settings used in the method addARoomDescription()
  	Border raisedbevel = BorderFactory.createRaisedBevelBorder(); 
@@ -59,7 +65,7 @@ public class MainFrame extends JFrame {
 		this.setTitle("Reservation System");
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH); //makes window screen size
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-	
+		this.makeRooms();
 	
 		this.createMenuBar();
 		//this.createRoomPanel();
@@ -156,6 +162,21 @@ public class MainFrame extends JFrame {
 		
 	}
 	
+	
+	/**
+	 * makes the initial set of room objects so we can pull the descriptions from each
+	 * makes increment the room availability for each room by one to account for these extra rooms that are being
+	 * created by this method
+	 */
+	private void makeRooms() {
+		AdultBilliardsLounge abD = new AdultBilliardsLounge();
+		AquaRoom arD = new AquaRoom();
+		KaraokeRoom krD = new KaraokeRoom();
+		MediumPartyRoom mpD = new MediumPartyRoom();
+		spR = new SmallPartyRoom();
+		
+		
+	}
 	
 	
 	/* initializes menu bar items and adds them to this window*/
