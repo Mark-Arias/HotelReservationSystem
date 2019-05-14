@@ -47,7 +47,6 @@ public class MainFrame extends JFrame {
 	
 	// Meal Plan Labels 
 	private JLabel basicMealPlan;
-	
 	private JLabel bronzeMealPlan;
 	private JLabel silverMealPlan;
 	private JLabel goldMealPlan;
@@ -55,10 +54,7 @@ public class MainFrame extends JFrame {
 	// test label 
 	JPanel mainPanel; 
 	
-	
 
-	
-	
 	//border settings used in the method addARoomDescription()
  	Border raisedbevel = BorderFactory.createRaisedBevelBorder(); 
  	Border loweredbevel = BorderFactory.createLoweredBevelBorder();
@@ -100,37 +96,34 @@ public class MainFrame extends JFrame {
 		
 		scrollPane = new JScrollPane(centerPanel);
 		this.add(scrollPane, BorderLayout.CENTER);
+		
 	}
 	
 	private void createMealPanel()
 	{
+		
 		// All Meals Panel 
 		allMealPanel = new JPanel();
-		
 		allMealPanel.setLayout(new BoxLayout(allMealPanel, BoxLayout.Y_AXIS));
 		
 		JLabel allMealPanelTitle = new JLabel("Meal Plans");
 		allMealPanelTitle.setFont(new Font(Font.SERIF, Font.BOLD, 30));
-		
 		allMealPanel.add(allMealPanelTitle);
 		
 		// Basic Meal Plan Panel 
 		basicMealPlanPanel = new JPanel(); 
 		basicMealPlanPanel.setLayout(new BoxLayout(allMealPanel, BoxLayout.Y_AXIS));
 		
-		JLabel basicMealPlanPanel = new JLabel("Basic Meal Plan");
+		JLabel basicMealPlanPanelTitle = new JLabel("Basic Meal Plan");
 		basicMealPlanPanel.setFont(new Font(Font.SERIF, Font.BOLD, 30));
 		
-		allMealPanel.add(basicMealPlanPanel);
+		basicMealPlanPanel.add(basicMealPlanPanelTitle);
 		
 		
 		bronzeMealPlanPanel = new JPanel();
 		silverMealPlanPanel = new JPanel();
 		goldMealPlanPanel = new JPanel ();
 		platinumMealPlanPanel = new JPanel();
-			
-			
-		
 		
 		
 		basicMealPlan = new JLabel("Basic Meal Plan");
@@ -143,22 +136,23 @@ public class MainFrame extends JFrame {
 		allMealPanel.add(bronzeMealPlan);
 		allMealPanel.add(silverMealPlan);
 		
+		
 		basicMealPlanPanel.add(basicMealPlan);
 		
 		// Add all panels to the main panel 
-		mainPanel.add(allMealPanel);
-		mainPanel.add(basicMealPlanPanel); 
+		//mainPanel.add(allMealPanel);
+		//mainPanel.add(basicMealPlanPanel); 
 		
 		
 		
 		
-		scrollPane = new JScrollPane(centerPanel);
+		scrollPane = new JScrollPane(mainPanel);
 		this.add(scrollPane, BorderLayout.CENTER);
 	
-		this.add(allMealPanel);
-		this.add(basicMealPlanPanel); 
-		allMealPanel.setVisible(false);
-		basicMealPlanPanel.setVisible(false);
+		//this.add(allMealPanel);
+		//this.add(basicMealPlanPanel); 
+		allMealPanel.setVisible(true);
+		basicMealPlanPanel.setVisible(true);
 	}
 	
 	
@@ -352,12 +346,8 @@ public class MainFrame extends JFrame {
 					break;
 			}
 			
-			
-				
-		
 		}
-		
-		
+			
 		
 	}
 	
@@ -377,20 +367,13 @@ public class MainFrame extends JFrame {
 				break;
 			case "Bronze":
 				System.out.println("be");
-				break;
-				
-
-				System.out.println("VIEW ALL"); //replace 
-				createMealPanel(); 
-				allMealPanel.setVisible(true);
-				
+				break;	
 
 			case "Silver":
 				System.out.println("sr");
-				//test
+			
 				break;
 
-				
 			case "Gold":
 				System.out.println("gd");
 				break;
