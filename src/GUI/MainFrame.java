@@ -34,16 +34,27 @@ public class MainFrame extends JFrame {
 	JPanel centerPanel;
 	
 	
-	// test label 
-	JLabel test; 
+	// MEAL PLANS 
+	// Meal Plan Panels 
+	JPanel allMealPanel; 
+	JPanel basicMealPlanPanel; 
+	JPanel bronzeMealPlanPanel; 
+	JPanel silverMealPlanPanel;
+	JPanel goldMealPlanPanel;
+	JPanel platinumMealPlanPanel; 
+		
 	
-	JPanel mealPanel; 
 	// Meal Plan Labels 
 	private JLabel basicMealPlan;
 	private JLabel bronzeMealPlan;
 	private JLabel silverMealPlan;
 	private JLabel goldMealPlan;
 	private JLabel platinumMealPlan;
+	// test label 
+	JPanel mainPanel; 
+	
+	
+
 	
 	
 	//border settings used in the method addARoomDescription()
@@ -54,10 +65,11 @@ public class MainFrame extends JFrame {
 		this.setTitle("Reservation System");
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH); //makes window screen size
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		
 	
 		this.createMenuBar();
+		
 		this.createDefaultPanel();
+		//this.createMealPanel(); 
 		this.setVisible(true);	
 	}
 	
@@ -90,14 +102,34 @@ public class MainFrame extends JFrame {
 	
 	private void createMealPanel()
 	{
-		centerPanel = new JPanel();
-		centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.Y_AXIS));
+		// All Meals Panel 
+		allMealPanel = new JPanel();
 		
-		JLabel panelTitle = new JLabel("Small Party Rooms");
-		panelTitle.setFont(new Font(Font.SERIF, Font.BOLD, 30));
+		allMealPanel.setLayout(new BoxLayout(allMealPanel, BoxLayout.Y_AXIS));
+		
+		JLabel allMealPanelTitle = new JLabel("Meal Plans");
+		allMealPanelTitle.setFont(new Font(Font.SERIF, Font.BOLD, 30));
+		
+		allMealPanel.add(allMealPanelTitle);
+		
+		// Basic Meal Plan Panel 
+		basicMealPlanPanel = new JPanel(); 
+		basicMealPlanPanel.setLayout(new BoxLayout(allMealPanel, BoxLayout.Y_AXIS));
+		
+		JLabel basicMealPlanPanel = new JLabel("Basic Meal Plan");
+		basicMealPlanPanel.setFont(new Font(Font.SERIF, Font.BOLD, 30));
+		
+		allMealPanel.add(basicMealPlanPanel);
 		
 		
-		centerPanel.add(panelTitle);
+		bronzeMealPlanPanel = new JPanel();
+		silverMealPlanPanel = new JPanel();
+		goldMealPlanPanel = new JPanel ();
+		platinumMealPlanPanel = new JPanel();
+			
+			
+		
+		
 		
 		basicMealPlan = new JLabel("Basic Meal Plan");
 		bronzeMealPlan = new JLabel("Bronze Meal Plan");
@@ -105,13 +137,26 @@ public class MainFrame extends JFrame {
 		goldMealPlan = new JLabel("Gold Meal Plan");
 		platinumMealPlan = new JLabel("Platinum Meal Plan");
 		
-		centerPanel.add(basicMealPlan);
-		centerPanel.add(bronzeMealPlan);
+		allMealPanel.add(basicMealPlan);
+		allMealPanel.add(bronzeMealPlan);
+		allMealPanel.add(silverMealPlan);
+		
+		basicMealPlanPanel.add(basicMealPlan);
+		
+		// Add all panels to the main panel 
+		mainPanel.add(allMealPanel);
+		mainPanel.add(basicMealPlanPanel); 
+		
+		
+		
 		
 		scrollPane = new JScrollPane(centerPanel);
 		this.add(scrollPane, BorderLayout.CENTER);
 	
-		
+		this.add(allMealPanel);
+		this.add(basicMealPlanPanel); 
+		allMealPanel.setVisible(false);
+		basicMealPlanPanel.setVisible(false);
 	}
 	
 	
@@ -280,6 +325,8 @@ public class MainFrame extends JFrame {
 				
 				System.out.println("VIEW ALL"); //replace 
 				createMealPanel(); 
+				allMealPanel.setVisible(true);
+				
 				
 				
 			}
