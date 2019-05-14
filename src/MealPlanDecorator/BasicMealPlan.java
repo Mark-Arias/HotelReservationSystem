@@ -36,4 +36,10 @@ public class BasicMealPlan extends GenericMealPlan {
 		String rt2 = "\n\tTopping Type \n\t\t" + pizzaToppingList.get(1);
     	return rt + rt2; 
 	}
+	
+	
+	public String getDes()
+	{
+		return "Basic Meal Plan Description";
+	}
 }
