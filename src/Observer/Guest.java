@@ -12,7 +12,14 @@ public class Guest
     private String address;
     private int creditCardInfo;
 
-
+    Guest(String name, int phone, String email, String address, int creditCardInfo) {
+    	
+    	this.name = name;
+    	this.phone = phone;
+    	this.email = email;
+    	this.address = address;
+    	this.creditCardInfo = creditCardInfo;
+    }
     /**
      *
      * @param n

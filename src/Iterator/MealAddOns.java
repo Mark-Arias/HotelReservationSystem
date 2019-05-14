@@ -1,6 +1,8 @@
 package Iterator;
 
- abstract class MealAddOns extends GenericMealPlan{
+import MealPlanDecorator.GenericMealPlan;
+
+abstract class MealAddOns extends GenericMealPlan{
     public abstract String getDescription();
 
 }

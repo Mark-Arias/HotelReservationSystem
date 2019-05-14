@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.util.Date;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -26,6 +27,8 @@ import javax.swing.border.Border;
 
 import GUI.MainFrame.MealItemListener;
 import GUI.MainFrame.RoomItemListener;
+import Observer.Guest;
+import Observer.Room;
 
 public class NewReservationFrame extends JFrame{
 
@@ -135,7 +138,9 @@ public class NewReservationFrame extends JFrame{
 		ccCVVLabel = new JLabel("CVV: ");
 		ccCVV = new JTextField("", 5); 
 		
+		ActionListener saveButtonListener = new SaveButton();
 		saveButton = new JButton("Save");
+		saveButton.addActionListener(saveButtonListener);
 		
 		ActionListener cancelButtonListener = new CancelButton();
 		cancelButton = new JButton("Cancel");//ActionListener needs to go back to previous page
@@ -323,7 +328,58 @@ public class NewReservationFrame extends JFrame{
 				menuBar.add(menu);
 				this.add(menuBar, BorderLayout.NORTH);
 	}
-	
+	class MenuItemListener implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			Object source = e.getActionCommand();
+			switch(source.toString()) {
+					
+				case "New Reservation...":
+					JFrame newReservation = new NewReservationFrame();
+					
+					break;
+					
+				case "Edit Existing Reservation...":
+					JFrame editReservation = new EditReservationFrame();
+					break;
+					
+				case "Check-in":
+					System.out.println("CI");
+					JFrame checkInFrame = new CheckinFrame();
+					break;
+					
+				case "Check-out":
+					System.out.println("CO");
+					break;
+			}
+			
+			
+				
+		
+		}
+	}
+	class SaveButton implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent event) {
+			
+			Object source = event.getSource();
+			// create object from form fields
+			
+			//get guest reservation information
+			
+//			guestName
+//			guestPhone
+//			guestEmail
+//			guestAddress
+//			guestDOB
+			
+			// need Date date, Room room, Guest guest objects to make reservation
+		}
+		
+	}
 	class CancelButton implements ActionListener {
 		@Override
 		public void actionPerformed (ActionEvent event) {
@@ -335,4 +391,5 @@ public class NewReservationFrame extends JFrame{
 	}
 	
 	}
+	
 	

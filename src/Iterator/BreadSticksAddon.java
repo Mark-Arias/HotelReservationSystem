@@ -1,5 +1,7 @@
 package Iterator;
 
+import MealPlanDecorator.GenericMealPlan;
+
 public class BreadSticksAddon extends MealAddOns{
 
     GenericMealPlan mealPlan;

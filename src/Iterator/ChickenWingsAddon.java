@@ -1,5 +1,7 @@
 package Iterator;
 
+import MealPlanDecorator.GenericMealPlan;
+
 public class ChickenWingsAddon extends MealAddOns{
     String [] chickenFlavors = new String [6]; //flavors available (6) : spicy, mild, lemon-pepper, BBQ, Seasame, or diablo
 
@@ -40,9 +42,9 @@ public class ChickenWingsAddon extends MealAddOns{
         chickenFlavor2 = chickenFlavors[flavor2];
     }
 
-    pubic String [] getFlavor () {
+    public String [] getFlavor () {
         String [] CFs = new String[2];
-        return
+        return null;
     }
 //    public  int getCost() {
 //        return
