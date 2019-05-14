@@ -41,7 +41,7 @@ public class AllRoomFrameDescription extends JFrame{
 	
 	AllRoomFrameDescription()
 	{
-		this.makeRooms();
+		//this.makeRooms();
 		this.setTitle("All Rooms");
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH); //makes window screen size
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -52,20 +52,7 @@ public class AllRoomFrameDescription extends JFrame{
 		this.setVisible(true);
 		
 	}
-	/**
-	 * makes the initial set of room objects so we can pull the descriptions from each
-	 * makes increment the room availability for each room by one to account for these extra rooms that are being
-	 * created by this method
-	 */
-	private void makeRooms() {
-		AdultBilliardsLounge abD = new AdultBilliardsLounge();
-		AquaRoom arD = new AquaRoom();
-		KaraokeRoom krD = new KaraokeRoom();
-		MediumPartyRoom mpD = new MediumPartyRoom();
-		spR = new SmallPartyRoom();
-		
-		
-	}
+
 	public void createComponents() {
 		
 		smallRoomLabel = new JLabel("Small Room Description");
