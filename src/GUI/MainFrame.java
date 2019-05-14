@@ -26,6 +26,7 @@ import javax.swing.border.Border;
 import Room.AquaRoom;
 import Room.MediumPartyRoom;
 import Room.SmallPartyRoom;
+//import MainFrame.ClickListener;
 
 public class MainFrame extends JFrame {
 	
@@ -91,9 +92,9 @@ public class MainFrame extends JFrame {
 		//Temporarily hard coded the descriptions
 		addARoomDescription(centerPanel, "/Users/ashley/Desktop/temp02.PNG", "Small Party Room" , "Small Party Room"
 	  			+ "\nDescription: Room with party tables and chairs, adjacent to arcade.");
-		addARoomDescription(centerPanel, "/Users/ashley/Desktop/temp02.PNG", "Small Party Room" , "Medium Party Room"
+		addARoomDescription(centerPanel, "/Users/ashley/Desktop/temp02.PNG", "Medium Party Room" , "Medium Party Room"
 	  			+ "\nDescription: Room with party tables and chairs, adjacent to arcade.");
-		addARoomDescription(centerPanel, "/Users/ashley/Desktop/temp02.PNG", "Small Party Room" , "Aqua Party Room"
+		addARoomDescription(centerPanel, "/Users/ashley/Desktop/temp02.PNG", "Aqua Party Room" , "Aqua Party Room"
 	  			+ "\nDescription: Room with party tables and chairs, adjacent to arcade.");
 		
 		scrollPane = new JScrollPane(centerPanel);
@@ -168,6 +169,8 @@ public class MainFrame extends JFrame {
 				JMenu menu;
 				JMenu submenu;
 				JMenuItem menuItem;
+				JMenuItem newReservationMenuItem;
+				JMenuItem editReservationMenuItem;
 				
 				//-------  DESCRIPTIONS MENU------------------
 				menu = new JMenu("Descriptions");
@@ -189,19 +192,23 @@ public class MainFrame extends JFrame {
 				submenu.add(menuItem);
 				
 				menuItem = new JMenuItem("Aqua Room");
+				menuItem.addActionListener(new RoomItemListener());
 				submenu.add(menuItem);
 				menu.add(submenu);
 				
 				//Lounges Sub Menu
 				submenu = new JMenu("Lounges");
 				
-				menuItem = new JMenuItem("All");
+				menuItem = new JMenuItem("All Lounges");
+				menuItem.addActionListener(new LoungeItemListener());
 				submenu.add(menuItem);
 				
 				menuItem = new JMenuItem("Karaoke Lounges");
+				menuItem.addActionListener(new LoungeItemListener());
 				submenu.add(menuItem);
 				
 				menuItem = new JMenuItem("Billiards Lounges");
+				menuItem.addActionListener(new LoungeItemListener());
 				submenu.add(menuItem);
 				
 				menu.add(submenu);
@@ -244,13 +251,16 @@ public class MainFrame extends JFrame {
 				//-------  RESERVATIONS MENU------------------
 				menu = new JMenu("Reservations");
 						
+						ActionListener MenuItemListener = new MenuItemListener();
 						//New reservation item
 						menuItem = new JMenuItem("New Reservation...");
+						menuItem.addActionListener(MenuItemListener);
 						menu.add(menuItem);
 						menu.addSeparator();
 						
 						//Edit reservation item
 						menuItem = new JMenuItem("Edit Existing Reservation...");
+						menuItem.addActionListener(MenuItemListener);
 						menu.add(menuItem);
 						menu.addSeparator();
 						
@@ -260,9 +270,11 @@ public class MainFrame extends JFrame {
 						submenu.setMnemonic(KeyEvent.VK_S);
 
 						menuItem = new JMenuItem("Check-in");
+						menuItem.addActionListener(MenuItemListener);
 						submenu.add(menuItem);
 						
 						menuItem = new JMenuItem("Check-out");
+						menuItem.addActionListener(MenuItemListener);
 						submenu.add(menuItem);
 						
 
@@ -306,50 +318,147 @@ public class MainFrame extends JFrame {
 		 	description.setBorder(BorderFactory.createCompoundBorder(raisedbevel, loweredbevel));
 			p.add(description);
 			
+			
+			ActionListener buttonListener = new BookNowButtonListener();
 	        JButton bookButton = new JButton("Book Now");
+	        bookButton.addActionListener(buttonListener);
 	        p.add(bookButton);
 	        container.add(p);
 	    }
 
+	class MenuItemListener implements ActionListener {
 
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			Object source = e.getActionCommand();
+			switch(source.toString()) {
+					
+				case "New Reservation...":
+					System.out.println("NR");
+					break;
+					
+				case "Edit Existing Reservation...":
+					System.out.println("ER");
+					break;
+					
+				case "Check-in":
+					System.out.println("CI");
+					break;
+					
+				case "Check-out":
+					System.out.println("CO");
+					break;
+			}
+			
+			
+				
+		
+		}
+		
+		
+		
+	}
 	
 	class MealItemListener implements ActionListener{
 
 		@Override
-		public void actionPerformed(ActionEvent click) {
-			JMenuItem menuItem = (JMenuItem) click.getSource();
-			String item = menuItem.getText();
-			System.out.println(item);
-			if(item.equals("All")) 
-			{
+		public void actionPerformed(ActionEvent e) {
+
+			//Meal Plan
+			Object source = e.getActionCommand();
+			switch(source.toString()) {
+			case "All":
+				System.out.println("all");
+				break;
+			case "Basic":
+				System.out.println("bc");
+				break;
+			case "Bronze":
+				System.out.println("be");
+				break;
 				
+
 				System.out.println("VIEW ALL"); //replace 
 				createMealPanel(); 
 				allMealPanel.setVisible(true);
 				
+
+			case "Silver":
+				System.out.println("sr");
+				break;
+
 				
+			case "Gold":
+				System.out.println("gd");
+				break;
 				
-			}
-			else if(item.equals("Basic")) System.out.println("VIEW BASIC"); //replace 
-			else if(item.equals("Bronze")) System.out.println("VIEW BRONZE");
+			case "Platinum":
+				System.out.println("pl");
+				break;
 			
-			
+				//
+		}
 		}
 		
 	}
-	
 
-	
-	
+	class LoungeItemListener implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent select) {
+			JMenuItem item = (JMenuItem) select.getSource();
+			switch(item.getText()) {
+			//Lounges
+			case "All Lounges":
+				System.out.println("all lounges");
+				break;
+				
+			case "Karaoke Lounges":
+				System.out.println("karaoke lounges");
+				break;
+				
+			case "Billiards Lounges":
+				System.out.println("billiards lounges");
+				break;
+			}
+		}
+		
+	}
+
+
 	class RoomItemListener implements ActionListener{
 
 		@Override
 		public void actionPerformed(ActionEvent select) {
 			JMenuItem item = (JMenuItem) select.getSource();
+			switch(item.getText()) {
+			case "All":
+				System.out.println("All");
+				break;
+			case  "Small Party Rooms":
+				System.out.println("small party rooms");
+				break;
+			case "Medium Party Rooms":
+				System.out.println("medium party rooms");
+				break;
+			case "Aqua Room":
+				System.out.println("Aqua room");
+				break;
+			}
 			
-			if(item.getText().equals("Medium Party Rooms")) System.out.println("Display only Medium Party Room");
+		}
+	}
+	
+	class BookNowButtonListener implements ActionListener {
+		@Override
+		public void actionPerformed (ActionEvent event) {
+			Object source = event.getSource();
+			JFrame newReservation = new NewReservationFrame();
 			
-		}}
+			//System.out.println(source.toString() );
+		}
+	}
 	
 	public static void main(String[] args
 			) {
