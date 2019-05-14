@@ -325,6 +325,7 @@ public class MainFrame extends JFrame {
 			Object source = e.getActionCommand();
 			switch(source.toString()) {
 			case "All":
+				createMealPanel();
 				System.out.println("all");
 				break;
 			case "Basic":
