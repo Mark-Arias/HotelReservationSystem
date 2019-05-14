@@ -20,8 +20,10 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.border.Border;
 
+import MealPlanDecorator.BasicMealPlan;
 // Note modified from her given code 
 import Room.AquaRoom;
 import Room.MediumPartyRoom;
@@ -35,19 +37,28 @@ public class MainFrame extends JFrame {
 	JPanel centerPanel;
 	
 	
-	// test label 
-	JLabel test; 
-	
+	// MEAL PLANS 
+	// Meal Plan Panels 
+
 	JPanel mealPanel; 
-	// Meal Plan Labels 
-	private JLabel basicMealPlan;
+	JPanel allMealPanel; 
+	JPanel basicMealPlanPanel; 
+	JPanel bronzeMealPlanPanel; 
+	JPanel silverMealPlanPanel;
+	JPanel goldMealPlanPanel;
+	JPanel platinumMealPlanPanel; 
+		
 	
+	// Meal Plan Labels 
+	private JTextArea basicMealPlan;
 	private JLabel bronzeMealPlan;
 	private JLabel silverMealPlan;
 	private JLabel goldMealPlan;
 	private JLabel platinumMealPlan;
+	// test label 
+	JPanel mainPanel; 
 	
-	
+
 	//border settings used in the method addARoomDescription()
  	Border raisedbevel = BorderFactory.createRaisedBevelBorder(); 
  	Border loweredbevel = BorderFactory.createLoweredBevelBorder();
@@ -56,15 +67,72 @@ public class MainFrame extends JFrame {
 		this.setTitle("Reservation System");
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH); //makes window screen size
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		
 	
 		this.createMenuBar();
+		
+		// Given 
 		this.createDefaultPanel();
-		this.setVisible(true);	
+		
+		//this.testPanel(); 
+		//this.testPanelII();
+		//this.createMealPanel(); 
+		
+		//mainPanel.setVisible(false);
+		this.setVisible(true);
+		//centerPanel.setVisible(true);
 	}
 	
+// 
 
-
+	private void testPanel()
+	{
+		
+		centerPanel = new JPanel();
+		centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.Y_AXIS));
+		//Title of default view
+		JLabel panelTitle = new JLabel("test");
+		panelTitle.setFont(new Font(Font.SERIF, Font.BOLD, 30));
+		
+		
+		centerPanel.add(panelTitle);
+		
+		//Temporarily hard coded the descriptions
+		addARoomDescription(centerPanel, "/Users/ashley/Desktop/temp02.PNG", "Small Party Room" , "Small Party Room"
+	  			+ "\nDescription: Room with party tables and chairs, adjacent to arcade.");
+		addARoomDescription(centerPanel, "/Users/ashley/Desktop/temp02.PNG", "Medium Party Room" , "Medium Party Room"
+	  			+ "\nDescription: Room with party tables and chairs, adjacent to arcade.");
+		addARoomDescription(centerPanel, "/Users/ashley/Desktop/temp02.PNG", "Aqua Party Room" , "Aqua Party Room"
+	  			+ "\nDescription: Room with party tables and chairs, adjacent to arcade.");
+		
+		scrollPane = new JScrollPane(centerPanel);
+		this.add(scrollPane, BorderLayout.CENTER);
+	
+	}
+	
+	private void testPanelII()
+	{
+		
+		centerPanel = new JPanel();
+		centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.Y_AXIS));
+		//Title of default view
+		JLabel panelTitle = new JLabel("test II");
+		panelTitle.setFont(new Font(Font.SERIF, Font.BOLD, 30));
+		
+		
+		centerPanel.add(panelTitle);
+		
+		//Temporarily hard coded the descriptions
+		addARoomDescription(mainPanel, "/Users/ashley/Desktop/temp02.PNG", "Small Party Room" , "Small Party Room"
+	  			+ "\nDescription: Room with party tables and chairs, adjacent to arcade.");
+		addARoomDescription(mainPanel, "/Users/ashley/Desktop/temp02.PNG", "Medium Party Room" , "Medium Party Room"
+	  			+ "\nDescription: Room with party tables and chairs, adjacent to arcade.");
+		addARoomDescription(mainPanel, "/Users/ashley/Desktop/temp02.PNG", "Aqua Party Room" , "Aqua Party Room"
+	  			+ "\nDescription: Room with party tables and chairs, adjacent to arcade.");
+		
+		scrollPane = new JScrollPane(centerPanel);
+		this.add(scrollPane, BorderLayout.CENTER);
+	
+	}
 	/*
 	 * initializes the default center panel and adds it to this frame
 	 * */
@@ -88,20 +156,33 @@ public class MainFrame extends JFrame {
 		
 		scrollPane = new JScrollPane(centerPanel);
 		this.add(scrollPane, BorderLayout.CENTER);
+		//chn
+		
 	}
 	
 	private void createMealPanel()
 	{
-		centerPanel = new JPanel();
-		centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.Y_AXIS));
+		// Clear existing components and add new components to frame 
+		centerPanel.removeAll(); 
+		centerPanel.revalidate();
+		centerPanel.repaint();
 		
-		JLabel panelTitle = new JLabel("Small Party Rooms");
-		panelTitle.setFont(new Font(Font.SERIF, Font.BOLD, 30));
+		JLabel allMealPanelTitle = new JLabel("Meal Plans");
+		allMealPanelTitle.setFont(new Font(Font.SERIF, Font.BOLD, 30));
+		centerPanel.add(allMealPanelTitle);
 		
+		BasicMealPlan bmp = new BasicMealPlan();
+		String description = bmp.getDes();
+		System.out.print(description);
+		basicMealPlan = new JTextArea(1,1);
+		//basicMealPlan.setSize(5, 10);
 		
-		centerPanel.add(panelTitle);
+		basicMealPlan.setEditable(false);
+		basicMealPlan.setFont(new Font(Font.SERIF, Font.PLAIN, 20));
+		basicMealPlan.setBorder(BorderFactory.createCompoundBorder(raisedbevel, loweredbevel));
 		
-		basicMealPlan = new JLabel("Basic Meal Plan");
+		basicMealPlan.append(description);
+	
 		bronzeMealPlan = new JLabel("Bronze Meal Plan");
 		silverMealPlan = new JLabel("Silver Meal Plan");
 		goldMealPlan = new JLabel("Gold Meal Plan");
@@ -109,11 +190,26 @@ public class MainFrame extends JFrame {
 		
 		centerPanel.add(basicMealPlan);
 		centerPanel.add(bronzeMealPlan);
+		centerPanel.add(silverMealPlan);
+		centerPanel.add(goldMealPlan);
+		centerPanel.add(platinumMealPlan);
+		//centerPanel.add(gold);
+		//centePanel.add()
+		allMealPanel.add(bronzeMealPlan);
+		allMealPanel.add(silverMealPlan);
 		
-		scrollPane = new JScrollPane(centerPanel);
-		this.add(scrollPane, BorderLayout.CENTER);
+		
+		//centerPanel.add(basicMealPlan);
+		
+		// Add all panels to the main panel 
+		//mainPanel.add(allMealPanel);
+		//mainPanel.add(basicMealPlanPanel); 
+		
+	//	System.out.println("meal plan");
+		JScrollPane scrollPane = new JScrollPane(centerPanel);
+		this.add(scrollPane); 
 	
-		
+
 	}
 	
 	
@@ -307,12 +403,8 @@ public class MainFrame extends JFrame {
 					break;
 			}
 			
-			
-				
-		
 		}
-		
-		
+			
 		
 	}
 	
@@ -325,6 +417,12 @@ public class MainFrame extends JFrame {
 			Object source = e.getActionCommand();
 			switch(source.toString()) {
 			case "All":
+				
+				//centerPanel.setVisible(false);
+				//testPanel();
+				createMealPanel(); 
+				//allMealPanel.setVisible(true);
+				//allMealPanel.setVisible(true);
 				System.out.println("all");
 				break;
 			case "Basic":
@@ -332,13 +430,13 @@ public class MainFrame extends JFrame {
 				break;
 			case "Bronze":
 				System.out.println("be");
-				break;
-				
+				break;	
+
 			case "Silver":
 				System.out.println("sr");
-				//test
+			
 				break;
-				
+
 			case "Gold":
 				System.out.println("gd");
 				break;
@@ -347,6 +445,7 @@ public class MainFrame extends JFrame {
 				System.out.println("pl");
 				break;
 			
+				//
 		}
 		}
 		
@@ -384,6 +483,9 @@ public class MainFrame extends JFrame {
 			switch(item.getText()) {
 			case "All":
 				System.out.println("All");
+				
+				
+				
 				break;
 			case  "Small Party Rooms":
 				System.out.println("small party rooms");
