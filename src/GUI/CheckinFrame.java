@@ -33,9 +33,12 @@ public class CheckinFrame extends JFrame{
 	private String[] waitList = {"Allyson", "Ben", "Kaitlyn", "George", "Emily"};
 	
 	public CheckinFrame() {
-		CreateComponents();
+		
 		this.setTitle("Check In");
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		CreateComponents();
 		this.setVisible(true);
 	}
 	
