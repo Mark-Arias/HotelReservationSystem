@@ -38,6 +38,8 @@ public class BasicMealPlan extends GenericMealPlan {
 	}
 	
 	
+	
+	// test method for MainFrame
 	public String getDes()
 	{
 		return "Basic Meal Plan Description";
