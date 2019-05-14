@@ -6,7 +6,7 @@ public class time {
 
 	public time(int hour, int minute) {
 		this.hour = 0;
-		this.minute = (0);
+		this.minute = 0;
 	}
 
 	public int getHour() {

@@ -23,4 +23,42 @@ import javax.swing.border.Border;
 
 public class EditReservationFrame extends JFrame{
 
+	EditReservationFrame(){
+		this.setTitle("Edit Reservation Frame");
+		this.setExtendedState(JFrame.MAXIMIZED_BOTH); //makes window screen size
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+	
+		this.createComponents();
+		this.setVisible(true);
 }
+	//ygb
+	public void createComponents()
+	{
+		guestSearchNameLabel = new JLabel("Search Confirmation #: ");
+		guestSearch = new JTextField("", 15);
+		ActionListener guestSearchListener = new GuestSearch();
+		guestButton = new JButton("Search");
+		guestButton.addActionListener(guestSearchListener);
+		waitlistSearchLabel = new JLabel("Search Wait List: ")
+		waitlistSearch = new JTextField("", 15);		
+		ActionListener waitlistSearchListener = new WaitlistSearch();
+		waitlistButton = new JButton("Search");
+		waitlistButton.addActionListener(waitlistSearchListener);
+
+	}
+	
+	class guestButton implements ActionListener {
+		@Override
+		public void actionPerformed (ActionEvent event) {
+			int confirmationNumber = int.parseInt(guestSearch.getText());
+			//check if confirmation # is valid ~ bring up guest info to edit
+		}
+	}
+	
+	class waitlistButton implements ActionListener {
+		@Override
+		public void actionPerformed (ActionEvent event) {
+			String waitlistGuest = waitlistSearch.getText();
+			//check if guest in waitlist ~ bring up guest info to edit
+		}
+	}
