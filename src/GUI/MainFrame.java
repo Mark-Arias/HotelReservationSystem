@@ -125,7 +125,7 @@ public class MainFrame extends JFrame {
 		goldMealPlanPanel = new JPanel ();
 		platinumMealPlanPanel = new JPanel();
 		
-		
+		//
 		basicMealPlan = new JLabel("Basic Meal Plan");
 		bronzeMealPlan = new JLabel("Bronze Meal Plan");
 		silverMealPlan = new JLabel("Silver Meal Plan");
