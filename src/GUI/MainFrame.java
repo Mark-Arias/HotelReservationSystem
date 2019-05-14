@@ -93,6 +93,7 @@ public class MainFrame extends JFrame {
 		
 		scrollPane = new JScrollPane(centerPanel);
 		this.add(scrollPane, BorderLayout.CENTER);
+
 	}
 
 	private void createRoomPanel()
@@ -128,6 +129,7 @@ public class MainFrame extends JFrame {
 		//this.add(basicMealPlan, BorderLayout.CENTER);
 		
 	
+
 		
 	}
 	private void createMealPanel()
@@ -333,11 +335,12 @@ public class MainFrame extends JFrame {
 			switch(source.toString()) {
 					
 				case "New Reservation...":
-					System.out.println("NR");
+					JFrame newReservation = new NewReservationFrame();
+					
 					break;
 					
 				case "Edit Existing Reservation...":
-					System.out.println("ER");
+					JFrame editReservation = new EditReservationFrame();
 					break;
 					
 				case "Check-in":
