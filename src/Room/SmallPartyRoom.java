@@ -2,7 +2,8 @@ package Room;
 
 public class SmallPartyRoom extends Observer.Room{
 	  protected int numberOfRoomsAvailable;
-	  protected String description;
+	  protected String description =  "\n\t\tSmall Party Room"
+	  			+ "\n\t\tDescription: Room with party tables and chairs, adjacent to arcade.";;
 	  protected String restrictions;
 	  protected double cost;
 	  
@@ -10,8 +11,8 @@ public class SmallPartyRoom extends Observer.Room{
 	  {
 		  this.numberOfRoomsAvailable = 3;
 		  
-		  this.description = "\n\t\tSmall Party Room"
-				  			+ "\n\t\tDescription: Room with party tables and chairs, adjacent to arcade.";
+//		  this.description = "\n\t\tSmall Party Room"
+//				  			+ "\n\t\tDescription: Room with party tables and chairs, adjacent to arcade.";
 		  
 		  this.restrictions = "";
 		  
