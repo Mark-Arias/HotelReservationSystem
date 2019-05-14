@@ -82,7 +82,7 @@ public class MainFrame extends JFrame {
 		//centerPanel.setVisible(true);
 	}
 	
-
+// 
 
 	private void testPanel()
 	{
