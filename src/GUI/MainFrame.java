@@ -155,15 +155,15 @@ public class MainFrame extends JFrame {
 				submenu = new JMenu("Lounges");
 				
 				menuItem = new JMenuItem("All Lounges");
-				menuItem.addActionListener(new MealItemListener());
+				menuItem.addActionListener(new LoungeItemListener());
 				submenu.add(menuItem);
 				
 				menuItem = new JMenuItem("Karaoke Lounges");
-				menuItem.addActionListener(new MealItemListener());
+				menuItem.addActionListener(new LoungeItemListener());
 				submenu.add(menuItem);
 				
 				menuItem = new JMenuItem("Billiards Lounges");
-				menuItem.addActionListener(new MealItemListener());
+				menuItem.addActionListener(new LoungeItemListener());
 				submenu.add(menuItem);
 				
 				menu.add(submenu);
@@ -288,34 +288,6 @@ public class MainFrame extends JFrame {
 			// TODO Auto-generated method stub
 			Object source = e.getActionCommand();
 			switch(source.toString()) {
-				case "All Rooms":
-					System.out.println("all rooms");
-					break;
-				case "Small Party Rooms":
-					System.out.println("small party rooms");
-					break;
-				case "Medium Party Rooms":
-					System.out.println("medium party rooms");
-					break;
-				case "Aqua Room":
-					System.out.println("aqua room");
-					break;
-				
-			
-				//Lounges
-				case "All Lounges":
-					System.out.println("all lounges");
-					break;
-					
-				case "Karaoke Lounges":
-					System.out.println("karaoke lounges");
-					break;
-					
-				case "Billiards Lounges":
-					System.out.println("billiards lounges");
-					break;
-				
-				
 					
 				case "New Reservation...":
 					System.out.println("NR");
@@ -347,19 +319,7 @@ public class MainFrame extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-//			JMenuItem menuItem = (JMenuItem) click.getSource();
-//			String item = menuItem.getText();
-//			System.out.println(item);
-//			if(item.equals("All")) 
-//			{
-//				
-//				System.out.println("VIEW ALL"); //replace 
-//				createMealPanel(); 
-//				
-//				
-//			}
-//			else if(item.equals("Basic")) System.out.println("VIEW BASIC"); //replace 
-//			else if(item.equals("Bronze")) System.out.println("VIEW BRONZE");
+
 			//Meal Plan
 			Object source = e.getActionCommand();
 			switch(source.toString()) {
@@ -389,17 +349,30 @@ public class MainFrame extends JFrame {
 		}
 		
 	}
-	class BookNowButtonListener implements ActionListener {
+
+	class LoungeItemListener implements ActionListener{
+
 		@Override
-		public void actionPerformed (ActionEvent event) {
-			Object source = event.getSource();
-			JFrame newReservation = new NewReservationFrame();
-			
-			//System.out.println(source.toString() );
+		public void actionPerformed(ActionEvent select) {
+			JMenuItem item = (JMenuItem) select.getSource();
+			switch(item.getText()) {
+			//Lounges
+			case "All Lounges":
+				System.out.println("all lounges");
+				break;
+				
+			case "Karaoke Lounges":
+				System.out.println("karaoke lounges");
+				break;
+				
+			case "Billiards Lounges":
+				System.out.println("billiards lounges");
+				break;
+			}
 		}
+		
 	}
 
-	
 
 	class RoomItemListener implements ActionListener{
 
@@ -421,12 +394,18 @@ public class MainFrame extends JFrame {
 				break;
 			}
 			
+		}
+	}
+	
+	class BookNowButtonListener implements ActionListener {
+		@Override
+		public void actionPerformed (ActionEvent event) {
+			Object source = event.getSource();
+			JFrame newReservation = new NewReservationFrame();
 			
-//			if(item.getText().equals("Medium Party Rooms")) {
-//				System.out.println("Display only Medium Party Room");
-//			}
-			
-		}}
+			//System.out.println(source.toString() );
+		}
+	}
 	
 	public static void main(String[] args
 			) {
