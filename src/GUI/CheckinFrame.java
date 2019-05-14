@@ -23,6 +23,6 @@ import javax.swing.border.Border;
 
 public class CheckinFrame extends JFrame{
 	
-	
+		
 
 }

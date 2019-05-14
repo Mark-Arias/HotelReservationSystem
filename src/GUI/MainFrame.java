@@ -300,6 +300,7 @@ public class MainFrame extends JFrame {
 					
 				case "Check-in":
 					System.out.println("CI");
+					JFrame checkInFrame = new CheckinFrame();
 					break;
 					
 				case "Check-out":
