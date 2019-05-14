@@ -31,7 +31,7 @@ public class EditReservationFrame extends JFrame{
 		this.createComponents();
 		this.setVisible(true);
 }
-	//
+	//ygb
 	public void createComponents()
 	{
 		guestSearchNameLabel = new JLabel("Search Confirmation #: ");
