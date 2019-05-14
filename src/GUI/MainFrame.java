@@ -156,6 +156,7 @@ public class MainFrame extends JFrame {
 		
 		scrollPane = new JScrollPane(centerPanel);
 		this.add(scrollPane, BorderLayout.CENTER);
+		//chn
 		
 	}
 	
