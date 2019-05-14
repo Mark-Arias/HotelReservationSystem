@@ -22,8 +22,10 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.border.Border;
 
+import Room.AdultBilliardsLounge;
 // Note modified from her given code 
 import Room.AquaRoom;
+import Room.KaraokeRoom;
 import Room.MediumPartyRoom;
 import Room.SmallPartyRoom;
 //import MainFrame.ClickListener;
@@ -33,6 +35,7 @@ public class MainFrame extends JFrame {
 	JMenuBar menuBar;
 	JScrollPane scrollPane;
 	JPanel centerPanel;
+	JPanel roomPanel;
 	
 	
 	// test label 
@@ -56,10 +59,12 @@ public class MainFrame extends JFrame {
 		this.setTitle("Reservation System");
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH); //makes window screen size
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		
+	
 	
 		this.createMenuBar();
+		//this.createRoomPanel();
 		this.createDefaultPanel();
+		
 		this.setVisible(true);	
 	}
 	
@@ -89,7 +94,42 @@ public class MainFrame extends JFrame {
 		scrollPane = new JScrollPane(centerPanel);
 		this.add(scrollPane, BorderLayout.CENTER);
 	}
+
+	private void createRoomPanel()
+	{
+		roomPanel = new JPanel();
+		roomPanel.setLayout(new BoxLayout(roomPanel, BoxLayout.Y_AXIS));
 	
+		
+		JLabel panelTitle = new JLabel("Small 22Party Rooms");
+		panelTitle.setFont(new Font(Font.SERIF, Font.BOLD, 30));
+		//Room Main Panel
+		roomPanel.add(panelTitle);
+		
+		basicMealPlan = new JLabel("Basic Meal Plan");
+		bronzeMealPlan = new JLabel("Bronze Meal Plan");
+		silverMealPlan = new JLabel("Silver Meal Plan");
+		goldMealPlan = new JLabel("Gold Meal Plan");
+		platinumMealPlan = new JLabel("Platinum Meal Plan");
+		
+		roomPanel.add(basicMealPlan);
+		roomPanel.add(bronzeMealPlan);
+//		roomPanel.revalidate();
+//		roomPanel.repaint();
+		
+		
+		scrollPane.add(roomPanel);
+		scrollPane.revalidate();		
+		scrollPane.repaint();
+		this.add(scrollPane);
+		roomPanel.setVisible(false);
+		
+		
+		//this.add(basicMealPlan, BorderLayout.CENTER);
+		
+	
+		
+	}
 	private void createMealPanel()
 	{
 		centerPanel = new JPanel();
@@ -384,10 +424,17 @@ public class MainFrame extends JFrame {
 		public void actionPerformed(ActionEvent select) {
 			JMenuItem item = (JMenuItem) select.getSource();
 			switch(item.getText()) {
+			
 			case "All":
+				//centerPanel.setVisible(false);
+				
+				//createRoomPanel();
+				
 				System.out.println("All");
 				break;
+			
 			case  "Small Party Rooms":
+				JFrame RoomDescription = new AllRoomFrameDescription();
 				System.out.println("small party rooms");
 				break;
 			case "Medium Party Rooms":
@@ -411,8 +458,11 @@ public class MainFrame extends JFrame {
 		}
 	}
 	
-	public static void main(String[] args
-			) {
+	public static void main(String[] args) {
 		MainFrame f = new MainFrame();
+		
+		
+		
+		
 	}
 }

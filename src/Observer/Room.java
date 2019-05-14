@@ -57,10 +57,7 @@ public class Room
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
-    
-    public String getDescription() {
-    	return description;
-    }
+
 
     /**
      *
@@ -103,7 +100,7 @@ public class Room
     * @return
     */
 
-   public String getDescription(){
+   public  String getDescription(){
        return description;
    }
 
