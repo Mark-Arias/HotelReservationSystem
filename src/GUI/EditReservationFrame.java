@@ -7,22 +7,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
-import javax.swing.BorderFactory;
-import javax.swing.BoxLayout;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.border.Border;
+import javax.swing.*;
+
 
 public class EditReservationFrame extends JFrame{
-
+	JLabel guestSearchNameLabel;
+	JTextField guestSearch;
+	JButton guestButton;
+	JLabel waitlistSearchLabel;
+	JTextField waitlistSearch;
+	JButton waitlistButton;
+	
 	EditReservationFrame(){
 		this.setTitle("Edit Reservation Frame");
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH); //makes window screen size
@@ -30,18 +25,18 @@ public class EditReservationFrame extends JFrame{
 	
 		this.createComponents();
 		this.setVisible(true);
-}
-	//ygb
+	}
+	
 	public void createComponents()
 	{
 		guestSearchNameLabel = new JLabel("Search Confirmation #: ");
 		guestSearch = new JTextField("", 15);
-		ActionListener guestSearchListener = new GuestSearch();
+		ActionListener guestSearchListener = new guestButton();
 		guestButton = new JButton("Search");
 		guestButton.addActionListener(guestSearchListener);
-		waitlistSearchLabel = new JLabel("Search Wait List: ")
+		waitlistSearchLabel = new JLabel("Search Wait List: ");
 		waitlistSearch = new JTextField("", 15);		
-		ActionListener waitlistSearchListener = new WaitlistSearch();
+		ActionListener waitlistSearchListener = new waitlistButton();
 		waitlistButton = new JButton("Search");
 		waitlistButton.addActionListener(waitlistSearchListener);
 
@@ -50,7 +45,7 @@ public class EditReservationFrame extends JFrame{
 	class guestButton implements ActionListener {
 		@Override
 		public void actionPerformed (ActionEvent event) {
-			int confirmationNumber = int.parseInt(guestSearch.getText());
+			//int confirmationNumber = int.parseInt(guestSearch.getText());
 			//check if confirmation # is valid ~ bring up guest info to edit
 		}
 	}
@@ -62,3 +57,4 @@ public class EditReservationFrame extends JFrame{
 			//check if guest in waitlist ~ bring up guest info to edit
 		}
 	}
+}
