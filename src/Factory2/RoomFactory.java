@@ -1,3 +1,4 @@
+package Factory2;
 
 public abstract class RoomFactory {
 	static final int MAX_SMALL = 10;

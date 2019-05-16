@@ -1,3 +1,4 @@
+package Factory2;
 
 public class AdultBilliardsFact extends RoomFactory {
 	@Override

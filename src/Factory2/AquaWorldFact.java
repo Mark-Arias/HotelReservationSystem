@@ -1,3 +1,4 @@
+package Factory2;
 
 public class AquaWorldFact extends RoomFactory {
 	
